@@ -1,3 +1,9 @@
+:root {
+    --red-main: #e21818;
+    --white-main: #ffffff;
+    --white-second-b: #e7e8eb;
+}
+
 @font-face {
     font-family: 'GillSans'; /* Nama font yang akan digunakan */
     src: url('../assets/fonts/Gill-Sans-Font-Family/Gill Sans.otf') format('truetype'); /* Path ke file font */
@@ -10,7 +16,26 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
 /* navigation */
+
+.navbar {
+    background-color: var(--red-main);
+    border-bottom: 2px solid #c0c0c0;
+    box-shadow: 0px 0px 15px 0px #949494;
+}
+.navbar-brand {
+    font-size: xx-large !important;
+}
+.navbar-brand, .nav-link {
+    color: white !important;
+}
+.active, a.show {
+    background-color: rgb(15, 100, 159) !important;
+}
+.dropdown-item:hover {
+    background: var(--white-second-b) !important;
+}
 
 
 
@@ -113,6 +138,7 @@
 .form-border {
     border-width: 2px; /* Atur lebar border sesuai kebutuhan */
     border-style: solid; /* Pilih style border, misalnya solid */
+<<<<<<< HEAD
 }
 
 .navbar{
@@ -128,3 +154,6 @@
     padding: 0.5rem 1rem;
     background-color: #AB47BC;
 }
+=======
+}
+>>>>>>> 1c33fd27c4d4c54a28ca2f0d6a5e79a7f3081139
