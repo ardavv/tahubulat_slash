@@ -10,17 +10,12 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.login{
+.center-card{
     height: 80vh;
     display: flex;
     justify-content: end;
     align-items: end;
     
-}
-
-.card{
-    width: 500px;
-    padding: 20px;
 }
 
 .title{
@@ -35,7 +30,10 @@
     display: flex;
     justify-items: center;
     justify-content: center;
-    
+}
+
+.nextbutton{
+    border-radius: 10px;
 }
 
 .logo-container {
@@ -58,3 +56,35 @@
     display: block; /* Membuat link menjadi blok untuk tumpukan vertikal */
     margin-bottom: 5px; /* Atur jarak antara link */
 }
+
+
+.bold-text {
+    font-weight: bold;
+}
+
+.card {
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak elemen di dalam card menjadi vertikal */
+    align-items: center; /* Mengatur elemen di dalam card agar berada di tengah secara horizontal */
+}
+
+.card-content {
+    flex-grow: 1; /* Mengatur agar card-content menempati sisa ruang di dalam card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mengatur agar elemen di dalam card-content terdistribusi secara merata */
+    padding: 20px; /* Atur padding agar konten tidak terlalu dekat dengan tepi card */
+}
+
+.nextbutton {
+    margin-top: 20px; /* Atur jarak antara form dan tombol */
+    text-align: center; /* Mengatur teks tombol agar berada di tengah */
+}
+
+.form-border {
+    border-width: 2px; /* Atur lebar border sesuai kebutuhan */
+    border-style: solid; /* Pilih style border, misalnya solid */
+}
+
