@@ -119,3 +119,12 @@
     color: white;
     background-color: red;
 }
+
+
+/* learning page */
+
+.dropdown-toggle{
+    font-size: 1.2rem; /* Atur ukuran font dropdown */
+    padding: 0.5rem 1rem;
+    background-color: #AB47BC;
+}

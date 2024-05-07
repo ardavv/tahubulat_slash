@@ -33,11 +33,10 @@ function Learning(props) {
         <>
             <Navbar activeKey='/learning' />
             <div className='homeBG'>
-                <h1>Video Pembelajaran</h1>
-                <Row className='border'>
-                    <Col>
-                        <Dropdown data-bs-theme="dark">
-                            <Dropdown.Toggle variant="secondary" style={{ backgroundColor: '#AB47BC' }}>
+                <Row className='border' >
+                    <Col className='border' >
+                        <Dropdown data-bs-theme="dark" >
+                            <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ backgroundColor: '#AB47BC' }} >
                                 Category
                             </Dropdown.Toggle>
 
@@ -52,7 +51,7 @@ function Learning(props) {
                             </Dropdown.Menu>
                         </Dropdown>
                     </Col>
-                    <Col>
+                    <Col className='border'>
                         <Form className="d-flex">
                             <Form.Control
                                 type="search"
@@ -83,8 +82,9 @@ function Learning(props) {
                         </Card>
                     </Col>
                 </Row>
-
-                <h1>Step Into Magical World</h1>
+                <div className='title'>
+                    Step Into Magical World
+                </div>
 
                 <Container className='carousels'>
                     <Carousel

@@ -6,11 +6,14 @@ import { Link } from "react-router-dom"
 import "../App.css"
 import Navbar from '../components/NavigationBar.js'
 
-function Home(){
-    return(
-        <div className='homeBG'>
-            <Navbar activeKey="/home"/>
-        </div>
+function Home() {
+    return (
+        <>
+        <Navbar activeKey="/home" />
+            <div className='homeBG'>
+                <h1>Hello World</h1>
+            </div>
+        </>
     )
 }
 export default Home
