@@ -6,7 +6,7 @@ import { Form, Card, Container, Row, Col, Image } from 'react-bootstrap'
 
 function SignUp() {
     return (
-        <div className='myBG'>
+        <div className='loginBG'>
             <div className='border center-card'>
 
                 <Container className=' text-white d-flex justify-content-center bg border'>

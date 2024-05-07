@@ -5,6 +5,8 @@ import "./style/homeLogin.css"
 import Login from './pages/LoginPage'
 import Signup from './pages/SignUpPage'
 import Identity from './pages/IdentityPages'
+import Home from './pages/Home'
+import Learning from './pages/Learningpage'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/identity' element={<Identity />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/learning' element={<Learning />} />
         </Routes>
       </Router>
     </>

@@ -6,7 +6,7 @@ import { Form, Card, Container, Row, Col, Image } from 'react-bootstrap'
 
 function Identity() {
     return (
-        <div className='myBG'>
+        <div className='loginBG'>
             <div className='center-card'>
             <Container>
                 <Row>
@@ -19,7 +19,9 @@ function Identity() {
                             Some quick example text to build on the card title and make up the
                             bulk of the card's content.
                         </Card.Text>
+                        <Link to='/home'>
                         <Card.Link href="#">Card Link</Card.Link>
+                        </Link>
                         <Card.Link href="#">Another Link</Card.Link>
                     </Card.Body>
                 </Card>

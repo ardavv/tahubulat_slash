@@ -9,7 +9,7 @@ import Apple from '../assets/img/apple.svg'
 
 function Login() {
     return (
-        <div className='myBG'>
+        <div className='loginBG'>
             <div className='border center-card'>
 
                 <Container className=' text-white d-flex justify-content-center bg border'>
@@ -39,7 +39,7 @@ function Login() {
 
 
                                     <div className='logbutton'>
-                                        <Button variant="warning" type="submit" className='w-50'>
+                                        <Button variant="warning" type="submit" className='w-50' href='/home'>
                                             Login
                                         </Button>
                                     </div>
