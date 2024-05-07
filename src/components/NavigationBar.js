@@ -1,16 +1,16 @@
 import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap"
 import "../style/homeLogin.css"
 
-const NavigationBar = () => {
+const NavigationBar = ({activeKey}) => {
     return (
         <>
+            <Navbar bg='danger' data-bs-theme="danger" style={{ fontWeight: 'bold' }} defaultActiveKey={activeKey}>
 
-            <Navbar bg='danger' data-bs-theme="danger" style={{ fontWeight: 'bold' }}>
                 <Container>
                     <Navbar.Brand href="/home" >TahuBulat</Navbar.Brand>
-                    <Nav variant="pills" defaultActiveKey="/home">
+                    <Nav variant="pills" >
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/learning" eventKey="link-1">Learning</Nav.Link>
+                        <Nav.Link href="/learning">Learning</Nav.Link>
                         <Nav.Link href="#playground">Playground</Nav.Link>
                         <Nav.Link href="#creative">Creative Lab</Nav.Link>
                         <NavDropdown title="Profile" id="collapsible-nav-dropdown">

@@ -9,7 +9,7 @@ import Navbar from '../components/NavigationBar.js'
 function Home(){
     return(
         <div className='homeBG'>
-            <Navbar/>
+            <Navbar activeKey="/home"/>
         </div>
     )
 }
