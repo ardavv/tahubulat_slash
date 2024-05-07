@@ -29,18 +29,25 @@
     
 }
 
+.site-logo {
+    width: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .title{
     font-size: 3rem;
     font-weight: 800;
     line-height: 1;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 }
 
 .logbutton{
     display: flex;
     justify-items: center;
     justify-content: center;
+    padding: 10px;
 }
 
 .nextbutton{
@@ -54,8 +61,12 @@
 }
 
 .image {
-    width: 50px; /* Sesuaikan ukuran logo sesuai kebutuhan */
+    width: 40px; /* Sesuaikan ukuran logo sesuai kebutuhan */
     margin: 0 10px; /* Atur jarak antara logo */
+}
+
+.image:hover {
+    cursor: pointer;
 }
 
 .link-container {
