@@ -1,0 +1,10 @@
+body {
+    height: 100x;
+    background-image: url(../assets/img/UIUX\ HEKETON.png);
+    background-size: cover;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
