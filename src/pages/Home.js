@@ -5,12 +5,14 @@ import { Form, Card, Container, Row, Col, Image } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import "../App.css"
 import Navbar from '../components/NavigationBar.js'
+import page from '../assets/img/page1.png'
 
 function Home(){
     return(
         <>
             <Navbar activeKey="/home"/>
             <div className='homeBG'>
+            <Image src={page} />
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat semper est, ut dignissim lacus cursus et. Suspendisse euismod at nunc quis sagittis. Fusce vitae egestas lorem. Etiam ornare est vitae enim imperdiet, sed tincidunt velit bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nullam mauris metus, egestas et libero quis, facilisis vehicula eros. Vestibulum non laoreet risus, ut vulputate nisl.
                 </p> 

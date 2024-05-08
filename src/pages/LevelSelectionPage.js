@@ -18,7 +18,7 @@ const LevelSelection = () => {
 
   const handleNextClick = () => {
     if (selectedLevel) {
-      navigate(`/Learningpage/Beginner${selectedLevel}`);
+      navigate(`/Learningpage/Learning${selectedLevel}`);
     }
   };
 
