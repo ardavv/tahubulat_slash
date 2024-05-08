@@ -1,6 +1,6 @@
 import React from 'react';
 import "../style/homeLogin.css";
-import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button } from 'react-bootstrap';
+import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
@@ -8,6 +8,9 @@ import loops from '../assets/img/loops.jpg';
 import variables from '../assets/img/variables.jpg';
 import ifelse from '../assets/img/ifelse.jpg';
 import Carousel from "react-multi-carousel";
+import buku from '../assets/img/buku.png'
+import task from '../assets/img/task.png'
+import video from '../assets/img/video.png'
 import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
@@ -36,7 +39,7 @@ function Learning(props) {
                 <Row className='border' >
                     <Col className='border' >
                         <Dropdown data-bs-theme="dark" >
-                            <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ backgroundColor: '#AB47BC' }} >
+                            <Dropdown.Toggle variant="secondary" className='dropdown-toggle' >
                                 Category
                             </Dropdown.Toggle>
 
@@ -52,20 +55,40 @@ function Learning(props) {
                         </Dropdown>
                     </Col>
                     <Col className='border'>
-                        <Form className="d-flex">
-                            <Form.Control
-                                type="search"
-                                placeholder="Search"
-                                className="me-2"
-                                aria-label="Search"
-                            />
-                            <Button>
-                                Search
-                            </Button>
-                        </Form>
+                        <Stack gap={2}>
+
+                            <div>
+
+                                <Form className="d-flex">
+                                    <Form.Control
+                                        type="search"
+                                        placeholder="Search"
+                                        className="me-2"
+                                        aria-label="Search"
+                                    />
+                                    <Button>
+                                        Search
+                                    </Button>
+                                </Form>
+                            </div>
+                            <div>
+                                <Link to="/baca">
+                                    <Image src={buku} rounded className="site-logo" />
+                                </Link>
+                                <Link to="/task">
+                                    <Image src={task} rounded className="site-logo" />
+                                </Link>
+
+                                <Link to="/video">
+                                    <Image src={video} rounded className="site-logo" />
+                                </Link>
+
+
+                            </div>
+                        </Stack>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card >
                             <Card.Body>
                                 <Card.Title>Active Task</Card.Title>
                                 <Card.Text>
@@ -106,7 +129,7 @@ function Learning(props) {
                         itemClass="carousel-item-padding-40-px"
                         focusOnSelect={true}
                     >
-                        <div className=''>
+                        <div>
                             <Card>
                                 <Card.Img variant="top" src={variables} />
                                 <Card.Body>

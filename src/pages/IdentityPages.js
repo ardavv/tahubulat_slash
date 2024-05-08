@@ -22,13 +22,15 @@ function Identity() {
                                     <Link to='/home'>
                                         <Card.Link href="#">Card Link</Card.Link>
                                     </Link>
-                                    <Card.Link href="#">Another Link</Card.Link>
-                                    <Form.Control
-                                        type="color"
-                                        id="exampleColorInput"
-                                        defaultValue="#563d7c"
-                                        title="Choose your color"
-                                    />
+                                    <Link to="/level">
+                                        <Card.Link href="#">Another Link</Card.Link>
+                                        <Form.Control
+                                            type="color"
+                                            id="exampleColorInput"
+                                            defaultValue="#563d7c"
+                                            title="Choose your color"
+                                        />
+                                    </Link>
                                 </Card.Body>
                             </Card>
                         </Col>
