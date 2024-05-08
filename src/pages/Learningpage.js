@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../style/homeLogin.css";
 import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
@@ -12,6 +12,8 @@ import buku from '../assets/img/buku.png'
 import task from '../assets/img/task.png'
 import video from '../assets/img/video.png'
 import "react-multi-carousel/lib/styles.css";
+import yourDataArray from '../data/BeginnerData.js';
+import Dropdowning from '../components/DropdownChange.js'
 
 const responsive = {
     desktop: {
@@ -31,28 +33,28 @@ const responsive = {
     }
 };
 
+
+
+
+
 function Learning(props) {
+    const [selectedLevel, setSelectedLevel] = useState('');
+
+    const handleLevelChange = (event) => {
+        setSelectedLevel(event.target.value);
+    };
     return (
         <>
             <Navbar activeKey='/learning' />
             <div className='homeBG'>
                 <Row className='border' >
                     <Col className='border' >
-                        <Dropdown data-bs-theme="dark" >
-                            <Dropdown.Toggle variant="secondary" className='dropdown-toggle' >
-                                Category
-                            </Dropdown.Toggle>
-
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1" active>
-                                    Beginner
-                                </Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Intermediate</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Expert</Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item href="#/action-4">Change your level</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        <label>Pilih level:</label>
+                        <select value={selectedLevel} onChange={handleLevelChange}>
+                            <option value="beginner">Pemula</option>
+                            <option value="intermediate">Menengah</option>
+                            <option value="expert">Ahli</option>
+                        </select>
                     </Col>
                     <Col className='border'>
                         <Stack gap={2}>
@@ -108,74 +110,45 @@ function Learning(props) {
                 <div className='title'>
                     Step Into Magical World
                 </div>
-
-                <Container className='carousels'>
-                    <Carousel
-                        swipeable={true}
-                        draggable={true}
-                        showDots={true}
-                        responsive={responsive}
-                        ssr={true} // means to render carousel on server-side.
-                        infinite={true}
-                        autoPlay={false}
-                        autoPlaySpeed={1000}
-                        keyBoardControl={true}
-                        customTransition="all .5"
-                        transitionDuration={500}
-                        containerClass="carousel-container"
-                        removeArrowOnDeviceType={["tablet", "mobile"]}
-                        deviceType={props.deviceType}
-                        dotListClass="custom-dot-list-style"
-                        itemClass="carousel-item-padding-40-px"
-                        focusOnSelect={true}
-                    >
-                        <div>
-                            <Card>
-                                <Card.Img variant="top" src={variables} />
-                                <Card.Body>
-                                    <Card.Title>wow</Card.Title>
-                                    <Card.Text>
-                                        woe
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card>
-                                <Card.Img variant="top" src={ifelse} />
-                                <Card.Body>
-                                    <Card.Title>wow</Card.Title>
-                                    <Card.Text>
-                                        woe
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card>
-                                <Card.Img variant="top" src={loops} />
-                                <Card.Body>
-                                    <Card.Title>wow</Card.Title>
-                                    <Card.Text>
-                                        woe
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card>
-                                <Card.Img variant="top" src={ifelse} />
-                                <Card.Body>
-                                    <Card.Title>wow</Card.Title>
-                                    <Card.Text>
-                                        woe
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                    </Carousel>;
-                </Container>
+                <div>
+                    <Container className='carousels'>
+                        <Carousel
+                            swipeable={true}
+                            draggable={true}
+                            showDots={true}
+                            responsive={responsive}
+                            ssr={true} // means to render carousel on server-side.
+                            infinite={true}
+                            autoPlay={false}
+                            autoPlaySpeed={1000}
+                            keyBoardControl={true}
+                            customTransition="all .5"
+                            transitionDuration={500}
+                            containerClass="carousel-container"
+                            removeArrowOnDeviceType={["tablet", "mobile"]}
+                            deviceType={props.deviceType}
+                            dotListClass="custom-dot-list-style"
+                            itemClass="carousel-item-padding-40-px"
+                            focusOnSelect={true}
+                        >
+                            {yourDataArray.map((item, index) => (
+                                <div key={index}>
+                                    <Card>
+                                        <Card.Img variant="top" src={item.imageUrl} />
+                                        <Card.Body>
+                                            <Card.Title>{item.title}</Card.Title>
+                                            <Card.Text>
+                                                {item.description}
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </div>
+                            ))}
+                        </Carousel>;
+                    </Container>
+                </div>
             </div>
+
         </>
     );
 }
