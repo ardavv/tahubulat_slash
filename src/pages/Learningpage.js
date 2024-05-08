@@ -11,8 +11,18 @@ import expertData from '../data/ExpertData.js'; // Ubah sesuai dengan path yang 
 import buku from '../assets/img/buku.png';
 import task from '../assets/img/task.png';
 import video from '../assets/img/video.png';
+import search from '../assets/img/search.png'
 import '../style/homeLogin.css';
+import '../style/videoPage.css'
 import '../App.css';
+
+//Card Video
+import CardData from '../components/CardVideo.js'
+import CardDataBeginner from '../data/BeginnerVideo.js';
+import CardDataIntermediate from '../data/IntermediateVideo.js';
+import CardDataExpert from '../data/ExpertVideo.js';
+
+
 
 const responsive = {
     desktop: {
@@ -32,7 +42,10 @@ const responsive = {
     }
 };
 
+
+
 function Learning(props) {
+    let cardData = []
     const [selectedLevel, setSelectedLevel] = useState('');
 
     useEffect(() => {
@@ -46,55 +59,86 @@ function Learning(props) {
     let yourDataArray = [];
     if (selectedLevel === 'beginner') {
         yourDataArray = beginnerData;
+        cardData = CardDataBeginner
     } else if (selectedLevel === 'intermediate') {
         yourDataArray = intermediateData;
+        cardData = CardDataIntermediate
     } else if (selectedLevel === 'expert') {
         yourDataArray = expertData;
+        cardData = CardDataExpert
     }
+
+
+    const scrollToTarget = (targetId) => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
+
 
     return (
         <>
             <Navbar activeKey='/learning' />
             <div className='homeBG'>
-                <Row className='border'>
-                    <Col className='border'>
+                <Row className=''>
+                    <Col className=''>
                         <label>Pilih level:</label>
-                        <select value={selectedLevel} onChange={handleLevelChange}>
+                        <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown'>
                             <option value="beginner">Pemula</option>
                             <option value="intermediate">Menengah</option>
                             <option value="expert">Ahli</option>
                         </select>
                     </Col>
-                    <Col className='border'>
+                    <Col className=''>
                         <Stack gap={2}>
                             <div>
                                 <Form className="d-flex">
                                     <Form.Control
                                         type="search"
-                                        placeholder="Search"
+                                        placeholder='search'
                                         className="me-2"
                                         aria-label="Search"
+                                        prepend={<Image src={search} />}
                                     />
-                                    <Button>
+                                    <Button style={{ backgroundColor: '#9065e7', color: '#ffffff' }}>
                                         Search
                                     </Button>
                                 </Form>
                             </div>
                             <div>
-                                <Link to="/baca">
-                                    <Image src={buku} rounded className="site-logo" />
-                                </Link>
-                                <Link to="/task">
-                                    <Image src={task} rounded className="site-logo" />
-                                </Link>
-                                <Link to="/video">
-                                    <Image src={video} rounded className="site-logo" />
-                                </Link>
+                                <Container>
+                                    <Row xs="auto">
+                                        <Col >
+                                            <div onClick={() => scrollToTarget('video')}>
+                                                <Image src={buku} rounded className="site-logo" />
+                                            </div>
+                                        </Col>
+                                        <Col>
+                                            <div onClick={() => scrollToTarget('video')}>
+                                                <Image src={task} rounded className="site-logo" />
+                                            </div>
+                                        </Col>
+                                        <Col>
+
+                                            <div onClick={() => scrollToTarget('video')}>
+                                                <Image src={video} rounded className="site-logo" />
+                                            </div>
+                                        </Col>
+                                    </Row>
+
+
+
+                                </Container>
+
+
+
                             </div>
                         </Stack>
                     </Col>
                     <Col>
-                        <Card>
+                        <Card className='card-task text-white'>
                             <Card.Body>
                                 <Card.Title>Active Task</Card.Title>
                                 <Card.Text>
@@ -144,6 +188,15 @@ function Learning(props) {
                             ))}
                         </Carousel>
                     </Container>
+                </div>
+            </div>
+
+            <div className='vid-page' id='video'>
+                <div className='title'>
+                    Video Pembelajaran
+                </div>
+                <div>
+                <CardData cardData={cardData} />
                 </div>
             </div>
         </>

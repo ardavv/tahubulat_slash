@@ -53,6 +53,7 @@
     line-height: 1;
     text-align: center;
     padding-bottom: 30px;
+    /* text-shadow:#e21818; */
 }
 
 .logbutton{
@@ -129,11 +130,26 @@
 }
 
 
-/* learning page */
+.custom-dropdown {
+    color: #ffffff; /* Warna teks */
+    font-size: 16px; /* Ukuran teks */
+    background-color: #9065e7; /* Warna background */
+    border-color: #9065e7; /* Warna border */
+    border-radius: 10px; /* Radius border */
+    width: 250px; /* Lebar dropdown yang diperbesar */
+    padding: 8px; /* Padding untuk isi dropdown */
+}
 
-.dropdown-toggle{
-    font-size: 1.2rem !important; /* Atur ukuran font dropdown */
-    padding: 0.5rem 1rem !important;
-    background-color: #AB47BC !important;
+.custom-dropdown option {
+    color: #000000; /* Warna teks opsi */
+    font-size: 14px; /* Ukuran teks opsi */
+}
+
+
+/* task learning page */
+
+.card-task{
+    border-color: black !important;
+    background-color: #9065e7 !important; 
 }
 
