@@ -1,5 +1,13 @@
 /* navigation */
 
+#mainNavbar {
+    position: initial;
+    z-index: 10;
+    width: 100vw;
+}
+#mainNavbar.navbar-fixed {
+    position: fixed;
+}
 .navbar {
     background-color: #864af9;
     border-bottom: 2px solid #8248ee;
@@ -15,55 +23,63 @@
 .navbar-brand:hover {
     color: #dfceff !important;
 }
-.nav-icon-link.active, a.show {
-    /* color: black !important; */
-    background-color: #9a6bf6 !important;
-}
 .dropdown-item.profile-dropdown-item:hover {
     background: var(--white-second-b) !important;
 }
 .dropdown-item.profile-dropdown-item:active {
     background: #FFD04A !important;
 }
+.navbar-brand, .nav-cust-span{
+    font-family: Genty;
+}
 .nav-icon-link {
     min-width: 150px;
     margin: 0 5px 0 5px;
-    /* display: flex; */
     align-items: center;
     text-align: center;
     padding: 5px 20px;
     color: white;
     text-decoration: none;
-    /* border-radius: var(--bs-nav-pills-border-radius) !important; */
     border-radius: 20px;
     transition: color .125s ease-in-out,background-color .125s ease-in-out,border-color .125s ease-in-out,border-radius .125s ease-in-out
+}
+.nav-icon-link.active, a.nav-icon-link.show {
+    /* color: black !important; */
+    background-color: #9a6bf6 !important;
 }
 .nav-icon-link:not(.active):hover {
     background-color: #7048bf;
 }
 .nav-icon-link.active:hover {
-    background-color: #9065e7 !important;
+    background-color: #9362f3 !important;
 }
 .nav-icon {
     height: 40px;
-    padding: 3px 0px 0px 0px;
+    padding: 4px 0px 2px 0px;
 }
 .nav-cust-span {
-    /* padding: 4px; */
+    /* margin: 4px !important; */
 }
 /* .nav-item.dropdown {
     display: flex !important;
     align-items: center !important;
 } */
 .outer-profile {
-    float: left;
-    margin-right: 70px !important;
+    margin-right: 50px !important;
+}
+.outer-profile > * {
+    /* padding: 0 10px; */
 }
 .outer-profile:hover {
     cursor: pointer;
 }
 .outer-profile > div > .dropdown-menu.show {
-    margin-top: 20px !important;
+    margin: 30px 0 0 60px !important;
+}
+.user-prof-pict {
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
 }
 .dropdown-toggle.nav-link {
     display: none;

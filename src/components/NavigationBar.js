@@ -6,6 +6,7 @@ import HomeIcon from '../assets/img/icons/home.png'
 import VideoIcon from '../assets/img/icons/video.svg'
 import TaskIcon from '../assets/img/icons/task.svg'
 import LibraryIcon from '../assets/img/icons/library.svg'
+import ProfilePict from '../assets/img/profile.webp'
 // import LearningIcon from '../assets/img/icons/learning.png'
 // import PlaygroundIcon from '../assets/img/icons/playground.svg'
 // import CreativeLabIcon from '../assets/img/icons/creativeLab.png'
@@ -50,7 +51,7 @@ const NavigationBar = () => {
 
     return (
         <>
-            <Navbar style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
+            <Navbar id='mainNavbar' style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
                 <Container fluid>
                     <Navbar.Brand as={Link} to="/home">TahuBulat</Navbar.Brand>
                     <Nav variant="pills">
@@ -58,15 +59,17 @@ const NavigationBar = () => {
                             <CustNavLink icon={nav.icon} name={nav.name} goTo={nav.goTo} />
                         )}
                         {/* <Link className="nav-icon-link" style={{display: 'flex'}} onClick={FakeProfileClickHandler}> */}
+                        <div style={{width: '4px', height: '80px', backgroundColor: 'white', borderRadius: '20px', margin: '0 10px'}}></div>
                         <div className="d-flex align-items-center justify-content-center nav-icon-link outer-profile" onClick={FakeProfileClickHandler}>
                             <NavDropdown title="Profile" id="profileDropdown" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
-                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.3">Something</NavDropdown.Item>
+                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.1">My Profile</NavDropdown.Item>
+                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.2">Friends</NavDropdown.Item>
+                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.3">Mystery Game</NavDropdown.Item>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.4">Log Out</NavDropdown.Item>
                             </NavDropdown>
-                            <span style={{alignSelf: 'center'}}>Username</span>
+                            <Image className='user-prof-pict' src={ProfilePict}></Image>
+                            <span className="nav-cust-span">Username</span>
                         </div>
                         {/* </Link> */}
                     </Nav>
