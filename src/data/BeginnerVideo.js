@@ -1,34 +1,29 @@
 // carouselData.js
 
-import loops from '../assets/img/loops.jpg';
-import variables from '../assets/img/variables.jpg';
-import ifelse from '../assets/img/ifelse.jpg';
+import coding from '../assets/img/beginner/coding.jpg';
+import counting from '../assets/img/beginner/counting.jpg';
+import punctuation from '../assets/img/beginner/punctuation.jpg';
 
 const CardDataBeginner = [
     {
-        imageUrl: loops,
-        title: 'Loops',
+        imageUrl: counting,
+        title: 'The Counting by Twos Song | Counting Songs | Scratch Garden',
         description: 'This is an image about loops.',
-        videoUrl: 'v-K-4KuA8mQ'
+        videoUrl: 'GvTcpfSnOMQ'
     },
     {
-        imageUrl: variables,
-        title: 'Variables',
+        imageUrl: coding,
+        title: 'What is Coding? | Lesson 1 | Camp Coding Camp',
         description: 'This is an image about variables.',
-        videoUrl:'ghCbURMWBD8&t=1s'
+        videoUrl:'peyoRSpMNg'
     },
     {
-        imageUrl: ifelse,
-        title: 'If-Else',
+        imageUrl: punctuation,
+        title: 'Punctuation Explained (by Punctuation!)',
         description: 'This is an image about if-else statements.',
-        videoUrl: 'HQ3dCWjfRZ4&t=47s'
+        videoUrl: 'LdCOswMeXFQ'
     },
-    {
-        imageUrl: variables,
-        title: 'Variables',
-        description: 'This is an image about variables.',
-        videoUrl: 'ghCbURMWBD8&t=1s'
-    },
+    
 ];
 
 export default CardDataBeginner;
