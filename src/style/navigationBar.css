@@ -1,47 +1,67 @@
 /* navigation */
 
 .navbar {
-    background-color: var(--red-main);
-    border-bottom: 2px solid #c0c0c0;
-    box-shadow: 0px 0px 15px 0px #949494;
+    background-color: #864af9;
+    border-bottom: 2px solid #8248ee;
+    box-shadow: 0px 0px 15px 0px #595959;
 }
 .navbar-brand {
     font-size: xx-large !important;
+    transition: color .125s ease-in-out;
 }
 .navbar-brand, .nav-link {
     color: white !important;
 }
+.navbar-brand:hover {
+    color: #dfceff !important;
+}
 .active, a.show {
     /* color: black !important; */
-    background-color: rgb(255, 198, 27) !important;
+    background-color: #9a6bf6 !important;
 }
 .dropdown-item:hover {
     background: var(--white-second-b) !important;
 }
 .nav-icon-link {
     margin: 0 5px 0 5px;
-    display: flex;
+    /* display: flex; */
     align-items: center;
+    text-align: center;
     padding: 5px 20px;
     color: white;
-    text-decoration: none !important;
+    text-decoration: none;
     /* border-radius: var(--bs-nav-pills-border-radius) !important; */
     border-radius: 20px;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,border-radius .15s ease-in-out
+    transition: color .125s ease-in-out,background-color .125s ease-in-out,border-color .125s ease-in-out,border-radius .125s ease-in-out
 }
 .nav-icon-link:not(.active):hover {
-    background-color: rgb(197, 19, 19);
+    background-color: #7048bf;
 }
 .nav-icon-link.active:hover {
-    background-color: rgb(246, 184, 0) !important;
-}
-.nav-icon-link > * {
-    display: inline-block !important;
+    background-color: #9065e7 !important;
 }
 .nav-icon {
     height: 40px;
-    padding: 3px;
+    padding: 3px 0px 0px 0px;
 }
 .nav-cust-span {
     /* padding: 4px; */
+}
+/* .nav-item.dropdown {
+    display: flex !important;
+    align-items: center !important;
+} */
+.outer-profile {
+    margin-right: 30px !important;
+}
+.outer-profile:hover {
+    cursor: pointer;
+}
+.dropdown-toggle {
+    /* align-self: center !important; */
+    height: 100%;
+    background-color: #00000000!important;
+}
+.dropdown-toggle.show {
+    background-color: #00000000 !important;
 }

@@ -15,14 +15,16 @@ const CustNavLink = ({ icon, name, goTo }) => {
         <>
             <Link id={newId} className={newClass + ' nav-icon-link'} to={goTo}>
                     <Image className="nav-icon" src={icon}></Image>
+                    <br></br>
                     <span className="nav-cust-span">{name}</span>
             </Link>
         </>
     )
 }
 
-const ProfileClickHandler = (e) => {
-
+const FakeProfileClickHandler = (e) => {
+    const elt = document.getElementById("profileDropdown");
+    elt.click();
 }
 
 const ProfileInHandler = (e) => {
@@ -36,34 +38,33 @@ const ProfileOutHandler = (e) => {
 }
 
 const NavigationBar = () => {
+    const navs = [
+        {icon: HomeIcon, name: 'Home', goTo: '/home'},
+        {icon: LearningIcon, name: 'Learning', goTo: '/learning'},
+        {icon: PlaygroundIcon, name: 'Playground', goTo: '#'},
+        {icon: CreativeLabIcon, name: 'Creative Lab', goTo: '#'}
+    ];
+    
     return (
         <>
-            <Navbar data-bs-theme="danger" style={{ fontWeight: 'bold', fontSize: 'larger' }}>
-                <Container>
+            <Navbar style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
+                <Container fluid>
                     <Navbar.Brand as={Link} to="/home">TahuBulat</Navbar.Brand>
                     <Nav variant="pills">
-                        <CustNavLink icon={HomeIcon} name="Home" goTo="/home" />
-                        {/* <Link>
-                            <Image className="nav-icon" src={HomeIcon}></Image>
-                            <br></br>
-                            <span className="nav-cust-span">Tess</span>
-                        </Link> */}
-                        <CustNavLink icon={LearningIcon} name="Learning" goTo="/learning" />
-                        <CustNavLink icon={PlaygroundIcon} name="Playground" goTo="#" />
-                        <CustNavLink icon={CreativeLabIcon} name="Creative Lab" goTo="#" />
-                        <Link className="nav-icon-link">
-                            <NavDropdown title="Profile" id="collapsible-nav-dropdown" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
+                        {navs.map((nav) => 
+                            <CustNavLink icon={nav.icon} name={nav.name} goTo={nav.goTo} />
+                        )}
+                        {/* <Link className="nav-icon-link" style={{display: 'flex'}} onClick={FakeProfileClickHandler}> */}
+                        <div className="nav-icon-link outer-profile" style={{display: 'flex'}} onClick={FakeProfileClickHandler}>
+                            <NavDropdown title="Profile" id="profileDropdown" className="profile" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Log Out
-                                </NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
                             </NavDropdown>
-                        </Link>
+                        </div>
+                        {/* </Link> */}
                     </Nav>
                 </Container>
             </Navbar>
