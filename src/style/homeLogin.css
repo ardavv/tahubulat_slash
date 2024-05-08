@@ -124,12 +124,6 @@
     border-style: solid; /* Pilih style border, misalnya solid */
 }
 
-.navbar{
-    color: white;
-    background-color: red;
-}
-
-
 .custom-dropdown {
     color: #ffffff; /* Warna teks */
     font-size: 16px; /* Ukuran teks */
@@ -143,30 +137,4 @@
 .custom-dropdown option {
     color: #000000; /* Warna teks opsi */
     font-size: 14px; /* Ukuran teks opsi */
-}
-
-
-/* learning page */
-
-.dropdown-toggle{
-    font-size: 1.2rem !important; /* Atur ukuran font dropdown */
-    padding: 0.5rem 1rem !important;
-    width: 200px;;
-    /* background-color: #AB47BC !important; */
-}
-
-/* #collapsible-nav-dropdown {
-    width: 300px;
-} */
-
-/* .img-content-learn {
-    border-radius: 10px;
-} */
-
-.box-content-learn {
-    width: 420px;
-    border: 1px solid black;
-    
-    color: white;
-    font-weight: bolder;
 }

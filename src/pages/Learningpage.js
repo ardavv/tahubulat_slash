@@ -1,5 +1,6 @@
 import React from 'react';
 import "../style/homeLogin.css";
+import "../style/learningPage.css";
 import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";

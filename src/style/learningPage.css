@@ -1,0 +1,46 @@
+/* learning page */
+
+/*  ########    WARNING    ######## 
+    .active, a.show    bisa terjadi konflik dengan elemen lain
+*/
+/* .active, a.show {
+    background-color: #FFD04A !important; 
+} */
+
+.dropdown-item:hover {
+    background: #FFD04A !important;
+}
+
+/* .carousels{
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 15px;
+} */
+
+/* .navbar{
+    color: white;
+    background-color: #864AF9;
+} */
+
+.dropdown-toggle{
+    font-size: 1.2rem !important; /* Atur ukuran font dropdown */
+    padding: 0.5rem 1rem !important;
+    width: 200px;;
+    background-color: #AB47BC !important;
+    /* background-color: #AB47BC !important; */
+}
+.dropdown-toggle.show {
+    background-color: #9637a7 !important; /* Atur warna background pas abis diklik */
+}
+.dropdown-toggle:hover {
+    background-color: #9637a7 !important; /* Atur warna background pas hover ke drodpown item */
+}
+
+.box-content-learn {
+    width: 420px;
+    border: 1px solid black;
+    
+    color: white;
+    font-weight: bolder;
+}
