@@ -1,59 +1,71 @@
 import React from 'react'
-import "../style/homeLogin.css"
-import Button from 'react-bootstrap/Button'
+import styles from "../style/homeLogin.css"
 import { Link } from "react-router-dom"
-import { Form, Card, Container, Row, Col, Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
+import Facebook from '../assets/img/facebook.svg'
+import Google from '../assets/img/google.svg'
+import Apple from '../assets/img/apple.svg'
 
 function SignUp() {
     return (
         <div className='loginBG'>
-            <div className='border center-card'>
+        <div className={styles.container} style={{ maxWidth: '396px', margin: 'auto' }}>
+            <div className={styles["sign-up"]} style={{ backgroundColor: 'white', borderRadius: '20px' }}>
+                <div className={`${styles.header} text-center mt-4 pt-3`}>
+                    <h1 style={{ fontWeight: '1000' }}>Sign Up</h1>
+                    <h1 style={{ fontWeight: '1000' }}>For Free</h1>
+                </div>
 
-                <Container className=' text-white d-flex justify-content-center bg border'>
-                    <Row>
-                        <Col>
-                            <Card bg='light' className='card'>
-                                <div className='card-content'>
+                <form className="m-4">
+                    <div className={styles["form-group"]}>
+                        <label htmlFor="inputEmail" className={styles.nameForm} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Your Email : </label>
+                        <input type="email" className={`${styles.registForm} form-control`} id="inputEmail" aria-describedby="emailHelp" placeholder="Email" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }}/>
+                    </div>
 
-                                    <div className='title'>Sign Up</div>
-                                    <div className='title'>For Free</div>
-                                    <Form>
-                                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                                            <Form.Label className='bold-text'>Your Email:</Form.Label>
-                                            <Form.Control type="email" placeholder="Email"/>
-                                            <Form.Text className="text-muted">
-                                                We'll never share your email with anyone else.
-                                            </Form.Text>
-                                        </Form.Group>
+                    <br />
 
-                                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                                            <Form.Label className='bold-text'>Your Password:</Form.Label>
-                                            <Form.Control type="password" placeholder="Password" />
-                                        </Form.Group>
-                                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                            <Form.Check type="checkbox" label="Check me out" />
-                                        </Form.Group>
+                    <div className={styles["form-group"]}>
+                        <label htmlFor="inputPassword" className={styles.nameForm} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Password :</label>
+                        <input type="password" className={`${styles.registForm} form-control`} id="inputPassword" placeholder="Password" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }}/>
+                    </div>
 
+                    <br />
 
+                    <div className={styles["form-group"]}>
+                        <label htmlFor="confirmPassword" className={styles.nameForm} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Confirm Password :</label>
+                        <input type="password" className={`${styles.registForm} form-control`} id="confirmPassword" placeholder="Password" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }}/>
+                    </div>
 
+                    <div className= "logo text-center p-2">
+                        <Link to="">
+                            <Image src={Facebook} alt="Facebook" className={styles.image} style={{ height: '30px', margin: '10px' }}/>
+                        </Link>
 
-                                        <div className='nextbutton border'>
-                                            <Link to='/identity'>
-                                            <Button variant="warning" type="submit" className='w-50'>
-                                                Next
-                                            </Button>
-                                            </Link>
-                                        </div>
+                        <Link to="">
+                            <Image src={Google} alt="Google" className={styles.image} style={{ height: '30px', margin: '10px' }}/>
+                        </Link>
 
-                                    </Form>
-                                </div>
+                        <Link to="">
+                            <Image src={Apple} alt="Apple" className={styles.image} style={{ height: '30px', margin: '10px' }}/>
+                        </Link>
+                    </div>
 
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
+                    <div className={styles["have-account"]}>
+                        <p style={{ textAlign: 'center' }}>Already have an account? <Link to="/" style={{ textDecoration: 'none' }}>Sign in</Link></p>
+                    </div>
+
+                    <div className={styles.submit} style={{ width: '396px', borderRadius: '10px', backgroundColor: '#FFC55A', marginLeft: '-24px' }}>
+                        <button type="submit" className="btn" style={{ width: '400px' }}>
+                            <div className={styles["btn-name"]}>
+                                <h3 style={{ textAlign: 'center', fontWeight: 'bolder' }}>
+                                <Link to="/login" style={{ textDecoration: 'none', color: 'black' }}>Next</Link>
+                                </h3>
+                            </div>
+                        </button>
+                    </div>
+                </form>
             </div>
-
+        </div>
         </div>
     )
 }
