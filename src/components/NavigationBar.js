@@ -51,14 +51,14 @@ const NavigationBar = () => {
 
     return (
         <>
+            <div id="belowNavbar"></div>
             <Navbar id='mainNavbar' style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
                 <Container fluid>
-                    <Navbar.Brand as={Link} to="/home">TahuBulat</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">Playgram</Navbar.Brand>
                     <Nav variant="pills">
                         {navs.map((nav) => 
                             <CustNavLink icon={nav.icon} name={nav.name} goTo={nav.goTo} />
                         )}
-                        {/* <Link className="nav-icon-link" style={{display: 'flex'}} onClick={FakeProfileClickHandler}> */}
                         <div style={{width: '4px', height: '80px', backgroundColor: 'white', borderRadius: '20px', margin: '0 10px'}}></div>
                         <div className="d-flex align-items-center justify-content-center nav-icon-link outer-profile" onClick={FakeProfileClickHandler}>
                             <NavDropdown title="Profile" id="profileDropdown" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
