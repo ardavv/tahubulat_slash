@@ -14,7 +14,9 @@ import ProfilePict from '../assets/img/profile.webp'
 const CustNavLink = ({ icon, name, goTo }) => {
     const curPath = useLocation().pathname;
     const newId = curPath === goTo? "activeNav" : "";
-    const newClass = curPath === goTo? "active" : "";
+    let newClass = curPath === goTo? "active" : "";
+    if (curPath === '/' && goTo === '/home')
+        newClass = 'active';
     return (
         <>
             <Link id={newId} className={newClass + ' nav-icon-link'} to={goTo}>
