@@ -143,6 +143,8 @@
     border-radius: 10px; /* Radius border */
     width: 250px; /* Lebar dropdown yang diperbesar */
     padding: 8px; /* Padding untuk isi dropdown */
+    font-family: Genty;
+    margin-top: 20px;
 }
 
 .custom-dropdown option {

@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import "../style/homeLogin.css";
 import "../style/taskPage.css"
 import { Container, Row, Col, Dropdown, Stack, Card } from 'react-bootstrap';
@@ -59,6 +59,17 @@ function Task(props) {
         }
     ];
 
+    const [selectedLevel, setSelectedLevel] = useState('');
+
+    useEffect(() => {
+        setSelectedLevel('beginner');
+    }, []);
+
+    const handleLevelChange = (event) => {
+        setSelectedLevel(event.target.value);
+    };
+
+
     return (
         <>
             <Navbar activeKey='/task' />
@@ -66,21 +77,11 @@ function Task(props) {
                 <div className='container'>
                     <Row >
                         <Col style={{ maxWidth: '300px' }}>
-                            <Dropdown data-bs-theme="dark" >
-                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle'>
-                                    Category
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu style={{ width: '200px', marginTop: '5px' }}>
-                                    <Dropdown.Item href="#/action-1" active style={{ fontFamily: 'Genty' }}>
-                                        Beginner
-                                    </Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2" style={{ fontFamily: 'Genty' }}>Intermediate</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3" style={{ fontFamily: 'Genty' }}>Expert</Dropdown.Item>
-                                    <Dropdown.Divider />
-                                    <Dropdown.Item href="#/action-4" style={{ fontFamily: 'Genty' }}>Change your level</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown'  >
+                                <option value="beginner">Pemula</option>
+                                <option value="intermediate">Menengah</option>
+                                <option value="expert">Ahli</option>
+                            </select>
                         </Col>
 
                         <Col>
@@ -91,7 +92,7 @@ function Task(props) {
                                             <Col key={idx} style={{ width: '100px', height: '100px', margin: '50px 50px auto 20px' }}>
                                                 <Link to={card.link} style={{ textDecoration: 'none' }}>
                                                     <Card className='card-task g-4' style={{ width: '100px', height: '100px', backgroundColor: '#FFDD53' }}>
-                                                        <Card.Img variant="top" src={card.imageSrc} style={{ height: '70px', width: '70px', marginTop: '-8px' }}/>
+                                                        <Card.Img variant="top" src={card.imageSrc} style={{ height: '70px', width: '70px', marginTop: '-8px' }} />
                                                         <Card.Body>
                                                             <Card.Title style={{ marginTop: '10px', width: '100%', whiteSpace: 'nowrap', fontFamily: 'Genty' }}>
                                                                 <p>
@@ -113,18 +114,18 @@ function Task(props) {
                                 <Card.Body style={{ fontFamily: 'Genty' }}>
                                     <Card.Title style={{ color: 'white', fontWeight: 'bolder', fontSize: '30px', textAlign: 'center', marginTop: '-15px' }}>Your Progress</Card.Title>
                                     <div style={{ width: '100px', margin: '20px auto 0px' }}>
-                                        <CircularProgressbar 
-                                        value={30} 
-                                        text={`${30}%`} 
-                                        strokeWidth={15}
-                                        styles={{
-                                            path: {
-                                              stroke: '#FBB454', // Warna latar belakang progress bar
-                                            },
-                                            text: {
-                                              fill: '#FFFFFF', // Warna teks
-                                            },
-                                          }}/>
+                                        <CircularProgressbar
+                                            value={30}
+                                            text={`${30}%`}
+                                            strokeWidth={15}
+                                            styles={{
+                                                path: {
+                                                    stroke: '#FBB454', // Warna latar belakang progress bar
+                                                },
+                                                text: {
+                                                    fill: '#FFFFFF', // Warna teks
+                                                },
+                                            }} />
                                     </div>
                                 </Card.Body>
                             </Card>
@@ -157,11 +158,11 @@ function Task(props) {
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
                         focusOnSelect={true}
-                        >
+                    >
                         <div>
                             <Card className='box-content-learn'>
                                 <Link to="#" style={{ textDecoration: 'none' }}>
-                                    <Card.Img variant="top" src={dress} className='img-content-learn'/>
+                                    <Card.Img variant="top" src={dress} className='img-content-learn' />
                                     <Card.Body>
                                         <Card.Title className='card-text-title'>Help Anita arrange her clothes</Card.Title>
                                     </Card.Body>
@@ -169,34 +170,34 @@ function Task(props) {
                             </Card>
                         </div>
                         <div>
-                        <Card className='box-content-learn'>
-                            <Link to="#" style={{ textDecoration: 'none' }}>
-                                <Card.Img variant="top" src={school} className='img-content-learn'/>
-                                <Card.Body>
-                                    <Card.Title className='card-text-title'>Oh no, Shawn has an exam tomorrow, let's help him Study</Card.Title>
-                                </Card.Body>
-                            </Link>
-                        </Card>
+                            <Card className='box-content-learn'>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={school} className='img-content-learn' />
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Oh no, Shawn has an exam tomorrow, let's help him Study</Card.Title>
+                                    </Card.Body>
+                                </Link>
+                            </Card>
                         </div>
                         <div>
-                        <Card className='box-content-learn'>
-                            <Link to="#" style={{ textDecoration: 'none' }}>    
-                                <Card.Img variant="top" src={dress} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title className='card-text-title'>Pick the best answer </Card.Title>
-                                </Card.Body>
-                            </Link>
-                        </Card>
+                            <Card className='box-content-learn'>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={dress} className='img-content-learn' />
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Pick the best answer </Card.Title>
+                                    </Card.Body>
+                                </Link>
+                            </Card>
                         </div>
                         <div>
-                        <Card className='box-content-learn'>
-                            <Link to="#" style={{ textDecoration: 'none' }}>
-                                <Card.Img variant="top" src={school} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title className='card-text-title'>Let's help Andi find his answer</Card.Title>
-                                </Card.Body>
-                            </Link>
-                        </Card>
+                            <Card className='box-content-learn'>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={school} className='img-content-learn' />
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Let's help Andi find his answer</Card.Title>
+                                    </Card.Body>
+                                </Link>
+                            </Card>
                         </div>
                     </Carousel>
                 </Container>

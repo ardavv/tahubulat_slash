@@ -1,4 +1,4 @@
-import {React} from 'react';
+import { React, useState, useEffect } from 'react';
 import "../style/homeLogin.css";
 import "../style/taskPage.css"
 import "../style/libraryPage.css"
@@ -37,6 +37,17 @@ const responsive = {
 };
 
 function Library(props) {
+    const [selectedLevel, setSelectedLevel] = useState('');
+
+    useEffect(() => {
+        setSelectedLevel('beginner');
+    }, []);
+
+    const handleLevelChange = (event) => {
+        setSelectedLevel(event.target.value);
+    };
+
+
 
     return (
         <>
@@ -45,26 +56,16 @@ function Library(props) {
                 <div className='container'>
                     <Row >
                         <Col style={{ maxWidth: '300px' }}>
-                            <Dropdown data-bs-theme="dark" >
-                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ width: '200px', marginLeft: '30px', marginTop: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9', fontFamily: 'Genty' }}>
-                                    Category
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu style={{ width: '200px', marginTop: '5px' }}>
-                                    <Dropdown.Item href="#/action-1" active style={{ fontWeight: 'bolder' }}>
-                                        Beginner
-                                    </Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2" style={{ fontWeight: 'bolder' }}>Intermediate</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3" style={{ fontWeight: 'bolder' }}>Expert</Dropdown.Item>
-                                    <Dropdown.Divider />
-                                    <Dropdown.Item href="#/action-4" style={{ fontWeight: 'bolder' }}>Change your level</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                            <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown'  >
+                                <option value="beginner">Pemula</option>
+                                <option value="intermediate">Menengah</option>
+                                <option value="expert">Ahli</option>
+                            </select>
                         </Col>
 
                         <Col>
                             <Stack gap={2}>
-                            <div>
+                                <div>
                                     <Form className="d-flex mt-4" >
                                         <Form.Control
                                             type="search"
@@ -80,22 +81,22 @@ function Library(props) {
                                 </div>
                                 <div>
                                     <Link to="#" style={{ marginLeft: '15px' }}>
-                                        <Image src={Puzzles} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                        <Image src={Puzzles} rounded className="site-logo m-1" style={{ width: '80px' }} />
                                     </Link>
                                     <Link to="#" style={{ marginLeft: '15px' }}>
-                                        <Image src={Games} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
-
-                                    <Link to="#" style={{ marginLeft: '15px' }}>
-                                        <Image src={Music} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
-                                    
-                                    <Link to="#" style={{ marginLeft: '15px' }}>
-                                        <Image src={A_logo} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                        <Image src={Games} rounded className="site-logo m-1" style={{ width: '80px' }} />
                                     </Link>
 
                                     <Link to="#" style={{ marginLeft: '15px' }}>
-                                        <Image src={Chat} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                        <Image src={Music} rounded className="site-logo m-1" style={{ width: '80px' }} />
+                                    </Link>
+
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={A_logo} rounded className="site-logo m-1" style={{ width: '80px' }} />
+                                    </Link>
+
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Chat} rounded className="site-logo m-1" style={{ width: '80px' }} />
                                     </Link>
                                 </div>
                             </Stack>
@@ -159,7 +160,7 @@ function Library(props) {
                                         <Image src={item.imageUrl} alt="Card image" className='libraryImage' style={{ width: '100%' }} /> {/* Atur lebar gambar menjadi 100% */}
                                     </div>
                                     <div style={{ width: '100%' }} > {/* Atur lebar div agar memenuhi lebar container */}
-                                        <Card className=" card-library" style={{width:'100%'}}> {/* Atur lebar kartu menjadi 100% */}
+                                        <Card className=" card-library" style={{ width: '100%' }}> {/* Atur lebar kartu menjadi 100% */}
                                             <Card.Title style={{ fontSize: '15px' }}>{item.title}</Card.Title>
                                             <Card.Text>
                                                 {item.description}

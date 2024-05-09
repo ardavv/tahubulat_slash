@@ -78,8 +78,8 @@ function Learning(props) {
             <div className='homeBG' style={{ backgroundColor: 'white' }}>
                 <div className='container'>
 
-                    <Row className='border'>
-                        <Col style={{ maxWidth: '300px' }} className='border'>
+                    <Row>
+                        <Col style={{ maxWidth: '300px' }}>
                             <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown'  >
                                 <option value="beginner">Pemula</option>
                                 <option value="intermediate">Menengah</option>
@@ -87,11 +87,11 @@ function Learning(props) {
                             </select>
 
                         </Col>
-                        <Col xs='1' md='5' className='border'>
+                        <Col>
                             <Stack gap={2}>
 
                                 <div>
-                                    <Form className="d-flex mt-4" >
+                                    <Form className="d-flex mt-3" >
                                         <Form.Control
                                             type="search"
                                             placeholder="Search"
