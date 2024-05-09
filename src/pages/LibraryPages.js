@@ -1,21 +1,19 @@
-import React from 'react';
+import {React} from 'react';
 import "../style/homeLogin.css";
 import "../style/taskPage.css"
 import "../style/libraryPage.css"
-import { Container, Row, Col, Dropdown, Stack, Image, Card } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown, Stack, Image, Card, Form, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
-import dress from '../assets/img/Thumbnail_dress.png';
-import school from '../assets/img/Thumbnail_school.png';
-import library from '../assets/img/library.png'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import LibraryData from '../data/LibraryData.js';
-import logic from '../assets/img/icons/taskBuildLogic.webp'
-import music from '../assets/img/icons/taskMakeMusic.webp'
-import story from '../assets/img/icons/taskMakeStory.png'
-import world from '../assets/img/icons/taskMakeWorld.webp'
+import Games from '../assets/img/Games.png'
+import Puzzles from '../assets/img/Puzzles.png'
+import A_logo from '../assets/img/A logo.png'
+import Music from '../assets/img/Music.png'
+import Chat from '../assets/img/Chat.png'
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
@@ -39,30 +37,6 @@ const responsive = {
 };
 
 function Library(props) {
-    const cardsData = [
-        {
-            title: "Build Logic",
-            imageSrc: logic,
-            link: "#"
-        },
-        {
-            title: "Make Music",
-            imageSrc: music,
-            link: "#"
-        },
-        {
-            title: "Make Story",
-            imageSrc: story,
-            link: "#"
-        },
-        {
-            title: "Make World",
-            imageSrc: world,
-            link: "#"
-        }
-    ];
-
-    let yourDataArray = [];
 
     return (
         <>
@@ -90,25 +64,39 @@ function Library(props) {
 
                         <Col>
                             <Stack gap={2}>
+                            <div>
+                                    <Form className="d-flex mt-4" >
+                                        <Form.Control
+                                            type="search"
+                                            placeholder="Search"
+                                            className="me-2"
+                                            aria-label="Search"
+                                            style={{ border: '2px solid black', borderRadius: '20px', width: '520px', fontFamily: 'Genty' }}
+                                        />
+                                        <Button style={{ border: '2px solid black', borderRadius: '20px', backgroundColor: '#864AF9', fontFamily: 'Genty' }}>
+                                            Search
+                                        </Button>
+                                    </Form>
+                                </div>
                                 <div>
-                                    <Row xs={1} md={4} className='g-4'>
-                                        {cardsData.map((card, idx) => (
-                                            <Col key={idx} style={{ width: '100px', height: '100px', margin: '50px 50px auto 20px' }}>
-                                                <Link to={card.link} style={{ textDecoration: 'none' }}>
-                                                    <Card className='card-task g-4' style={{ width: '100px', height: '100px', backgroundColor: '#FFDD53' }}>
-                                                        <Card.Img variant="top" src={card.imageSrc} style={{ height: '70px', width: '70px', marginTop: '-8px' }} />
-                                                        <Card.Body>
-                                                            <Card.Title style={{ marginTop: '10px', width: '100%', whiteSpace: 'nowrap', fontFamily: 'Genty' }}>
-                                                                <p>
-                                                                    {card.title}
-                                                                </p>
-                                                            </Card.Title>
-                                                        </Card.Body>
-                                                    </Card>
-                                                </Link>
-                                            </Col>
-                                        ))}
-                                    </Row>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Puzzles} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Games} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Music} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+                                    
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={A_logo} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Chat} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
                                 </div>
                             </Stack>
                         </Col>
@@ -137,9 +125,9 @@ function Library(props) {
                     </Row>
                 </div>
 
-                <div className='title container mt-4' style={{ textAlign: 'left' }}>
-                    <h1 style={{ fontFamily: 'Genty' }}>
-                        Begginers Pick
+                <div className='container mt-4 library-title' style={{ textAlign: 'left' }}>
+                    <h1>
+                        Dance of Discovery
                     </h1>
                 </div>
 
@@ -170,8 +158,8 @@ function Library(props) {
                                     <div style={{ width: '100%' }}> {/* Atur lebar div agar memenuhi lebar container */}
                                         <Image src={item.imageUrl} alt="Card image" className='libraryImage' style={{ width: '100%' }} /> {/* Atur lebar gambar menjadi 100% */}
                                     </div>
-                                    <div style={{ width: '100%' }}> {/* Atur lebar div agar memenuhi lebar container */}
-                                        <Card className="bg-dark text-white card-library" style={{ width: '100%' }}> {/* Atur lebar kartu menjadi 100% */}
+                                    <div style={{ width: '100%' }} > {/* Atur lebar div agar memenuhi lebar container */}
+                                        <Card className=" card-library" style={{width:'100%'}}> {/* Atur lebar kartu menjadi 100% */}
                                             <Card.Title style={{ fontSize: '15px' }}>{item.title}</Card.Title>
                                             <Card.Text>
                                                 {item.description}

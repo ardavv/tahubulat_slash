@@ -3,14 +3,11 @@ import "../style/homeLogin.css";
 import "../style/learningPage.css";
 
 import "../style/taskPage.css"
-import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image, Badge } from 'react-bootstrap';
+import { Card, Container, Row, Col, Dropdown, Form, Button, Stack, Image} from 'react-bootstrap';
 
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
-import loops from '../assets/img/loops.jpg';
-import variables from '../assets/img/variables.jpg';
-import ifelse from '../assets/img/ifelse.jpg';
 import Carousel from "react-multi-carousel";
 import Games from '../assets/img/Games.png'
 import Puzzles from '../assets/img/Puzzles.png'
@@ -18,14 +15,6 @@ import A_logo from '../assets/img/A logo.png'
 import Music from '../assets/img/Music.png'
 import Chat from '../assets/img/Chat.png'
 import "react-multi-carousel/lib/styles.css";
-
-
-// 
-import idea from '../assets/img/icons/learningpage/idea.png'
-import game from '../assets/img/icons/learningpage/game.png'
-import music from '../assets/img/icons/learningpage/music.png'
-import alphabet from '../assets/img/icons/learningpage/alphabet.png'
-import chat from '../assets/img/icons/learningpage/chat.png'
 
 // 
 import beginnerData from '../data/BeginnerData.js'
@@ -91,7 +80,7 @@ function Learning(props) {
 
                     <Row className='border'>
                         <Col style={{ maxWidth: '300px' }} className='border'>
-                            <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown' >
+                            <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown'  >
                                 <option value="beginner">Pemula</option>
                                 <option value="intermediate">Menengah</option>
                                 <option value="expert">Ahli</option>

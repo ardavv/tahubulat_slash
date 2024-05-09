@@ -4,9 +4,21 @@
 }
 
 .card-library {
+    background-color: #378795 !important;
     padding: 10px !important;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2) !important;
     border-style: solid !important;
     border-width: 0.5px !important;
     border-radius: 10px !important;
+    font-size: larger !important;
+    font-family: Genty !important;
+    color: #ffffff !important;
+}
+
+.library-title {
+    font-size: larger;
+    font-family: Genty;
+    color: #17d8d2;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #378795;
 }
