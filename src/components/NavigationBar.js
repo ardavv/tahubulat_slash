@@ -73,9 +73,12 @@ const NavigationBar = () => {
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.2">Friends</NavDropdown.Item>
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.3">Mystery Game</NavDropdown.Item>
                                 <NavDropdown.Divider />
+
                                 <Link to='/login'>
                                     <NavDropdown.Item className="profile-dropdown-item" href="#action/3.4">Log Out</NavDropdown.Item>
                                 </Link>
+
+                                
                             </NavDropdown>
                             <Image className='user-prof-pict' src={ProfilePict}></Image>
                             <span className="nav-cust-span">Username</span>

@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from 'react';
 import "../style/homeLogin.css";
 import "../style/learningPage.css";
+
 import "../style/taskPage.css"
 import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image, Badge } from 'react-bootstrap';
+
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
@@ -10,9 +12,11 @@ import loops from '../assets/img/loops.jpg';
 import variables from '../assets/img/variables.jpg';
 import ifelse from '../assets/img/ifelse.jpg';
 import Carousel from "react-multi-carousel";
-import buku from '../assets/img/buku.png'
-import task from '../assets/img/task.png'
-import video from '../assets/img/video.png'
+import Games from '../assets/img/Games.png'
+import Puzzles from '../assets/img/Puzzles.png'
+import A_logo from '../assets/img/A logo.png'
+import Music from '../assets/img/Music.png'
+import Chat from '../assets/img/Chat.png'
 import "react-multi-carousel/lib/styles.css";
 
 
@@ -84,14 +88,15 @@ function Learning(props) {
             <Navbar activeKey='/learning' />
             <div className='homeBG' style={{ backgroundColor: 'white' }}>
                 <div className='container'>
+
                     <Row className='border'>
                         <Col style={{ maxWidth: '300px' }} className='border'>
-                            <label>Pilih level:</label>
                             <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown' >
                                 <option value="beginner">Pemula</option>
                                 <option value="intermediate">Menengah</option>
                                 <option value="expert">Ahli</option>
                             </select>
+
                         </Col>
                         <Col xs='1' md='5' className='border'>
                             <Stack gap={2}>
@@ -103,65 +108,40 @@ function Learning(props) {
                                             placeholder="Search"
                                             className="me-2"
                                             aria-label="Search"
-                                            style={{ border: '3px solid black', borderRadius: '20px', fontWeight: 'bolder', width: '520px' }}
+                                            style={{ border: '2px solid black', borderRadius: '20px', width: '520px', fontFamily: 'Genty' }}
                                         />
-                                        <Button style={{ border: '3px solid black', borderRadius: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9' }}>
+                                        <Button style={{ border: '2px solid black', borderRadius: '20px', backgroundColor: '#864AF9', fontFamily: 'Genty' }}>
                                             Search
                                         </Button>
                                     </Form>
                                 </div>
                                 <div>
-                                <Container>
-        <Row>
-            <Col className="gx-1">
-                <Link to="/baca">
-                    <Badge bg="danger" className="p-2 rounded-circle">
-                        <Image src={idea} rounded className="site-logo m-1" style={{ width: '40px' }} />
-                    </Badge>
-                </Link>
-            </Col>
-            <Col className="gx-1">
-                <Link to="/task">
-                    <Badge style={{ backgroundColor: '#FFA500' }} className="p-2 rounded-circle">
-                        <Image src={game} rounded className="site-logo m-1" style={{ width: '40px' }} />
-                    </Badge>
-                </Link>
-            </Col>
-            <Col className="gx-1">
-                <Link to="/playlist">
-                    <Badge bg="primary" className="p-2 rounded-circle">
-                        <Image src={music} rounded className="site-logo m-1" style={{ width: '40px' }} />
-                    </Badge>
-                </Link>
-            </Col>
-            <Col className="gx-1">
-                <Link to="/playlist">
-                    <Badge bg="warning" className="p-2 rounded-circle">
-                        <Image src={alphabet} rounded className="site-logo m-1" style={{ width: '40px' }} />
-                    </Badge>
-                </Link>
-            </Col>
-            <Col className="gx-1">
-                <Link to="/playlist">
-                    <Badge bg="warning" className="p-2 rounded-circle">
-                        <Image src={chat} rounded className="site-logo m-1" style={{ width: '40px' }} />
-                    </Badge>
-                </Link>
-            </Col>
-        </Row>
-    </Container>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Puzzles} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Games} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
 
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Music} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+                                    
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={A_logo} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
 
-
-
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Chat} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
                                 </div>
                             </Stack>
                         </Col>
                         <Col>
-                            <Card style={{ width: '300px', backgroundColor: '#864AF9', marginLeft: '100px' }}>
+                            <Card style={{ width: '300px', backgroundColor: '#864AF9', marginLeft: '50px' }}>
                                 <Card.Body>
-                                    <Card.Title style={{ color: 'white', fontWeight: 'bolder', fontSize: '30px', textAlign: 'center' }}>Active Task !</Card.Title>
-                                    <Card.Text style={{ color: 'white', marginLeft: '-20px', fontSize: '18px' }}>
+                                    <Card.Title style={{ color: 'white', fontWeight: 'bolder', fontSize: '30px', textAlign: 'center', fontFamily: 'Genty' }}>Active Task !</Card.Title>
+                                    <Card.Text style={{ color: 'white', marginLeft: '-20px', fontSize: '18px', fontFamily: 'Genty' }}>
                                         <ul>
                                             <li>
                                                 Watch Video How to Make Music
@@ -178,7 +158,9 @@ function Learning(props) {
                 </div>
 
                 <div className='title container mt-4' style={{ textAlign: 'left' }}>
-                    Step Into Magical World
+                    <h1 className='task-title'>
+                        Step Into Magical World
+                    </h1>
                 </div>
 
                 <Container className='carousels'>
@@ -200,6 +182,7 @@ function Learning(props) {
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
                         focusOnSelect={true}
+
                     >
                         {yourDataArray.map((item, index) => (
                             <div key={index} onClick={() => openVideo(item.videoUrl)} style={{ cursor: 'pointer' }}>
@@ -214,6 +197,7 @@ function Learning(props) {
 
                             </div>
                         ))}
+
                     </Carousel>
                 </Container>
             </div>

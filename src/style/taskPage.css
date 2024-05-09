@@ -3,7 +3,23 @@
     height: 320px !important;
 }
 
+.box-content-learn:hover {
+    background-color: rgb(165, 112, 219) !important;
+}
+
 .card-task {
     border-radius: 10px !important;
     border: 3px solid black !important;
+}
+
+.card-task:hover {
+    background-color: #e3c652 !important;
+}
+
+.task-title {
+    font-size: larger;
+    font-family: Genty;
+    color: #8c52ff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #502b98;
 }

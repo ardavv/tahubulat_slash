@@ -1,7 +1,7 @@
 import React from 'react';
 import "../style/homeLogin.css";
 import "../style/taskPage.css"
-import { Container, Row, Col, Dropdown, Stack, Image, Card } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown, Stack, Card } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
@@ -67,18 +67,18 @@ function Task(props) {
                     <Row >
                         <Col style={{ maxWidth: '300px' }}>
                             <Dropdown data-bs-theme="dark" >
-                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ width: '200px', marginLeft: '30px', marginTop: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9', fontFamily: 'Genty' }}>
+                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle'>
                                     Category
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu style={{ width: '200px', marginTop: '5px' }}>
-                                    <Dropdown.Item href="#/action-1" active style={{ fontWeight: 'bolder' }}>
+                                    <Dropdown.Item href="#/action-1" active style={{ fontFamily: 'Genty' }}>
                                         Beginner
                                     </Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2" style={{ fontWeight: 'bolder' }}>Intermediate</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3" style={{ fontWeight: 'bolder' }}>Expert</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2" style={{ fontFamily: 'Genty' }}>Intermediate</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3" style={{ fontFamily: 'Genty' }}>Expert</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item href="#/action-4" style={{ fontWeight: 'bolder' }}>Change your level</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-4" style={{ fontFamily: 'Genty' }}>Change your level</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Col>
@@ -133,8 +133,8 @@ function Task(props) {
                 </div>
 
                 <div className='title container mt-4' style={{ textAlign: 'left' }}>
-                    <h1 style={{ fontFamily: 'Genty' }}>
-                        Begginers Pick
+                    <h1 className='task-title'>
+                        Beginner's Pick
                     </h1>
                 </div>
 
@@ -159,36 +159,44 @@ function Task(props) {
                         focusOnSelect={true}
                         >
                         <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={dress} className='img-content-learn'/>
-                                <Card.Body style={{ fontFamily: 'Genty', color: 'white', textAlign: 'center' }}>
-                                    <Card.Title>Help Anita arrange her clothes</Card.Title>
-                                </Card.Body>
+                            <Card className='box-content-learn'>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={dress} className='img-content-learn'/>
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Help Anita arrange her clothes</Card.Title>
+                                    </Card.Body>
+                                </Link>
                             </Card>
                         </div>
                         <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
+                        <Card className='box-content-learn'>
+                            <Link to="#" style={{ textDecoration: 'none' }}>
                                 <Card.Img variant="top" src={school} className='img-content-learn'/>
-                                <Card.Body style={{ fontFamily: 'Genty', color: 'white', textAlign: 'center' }}>
-                                    <Card.Title>Oh no, Shawn has an exam tomorrow, let's help him Study</Card.Title>
+                                <Card.Body>
+                                    <Card.Title className='card-text-title'>Oh no, Shawn has an exam tomorrow, let's help him Study</Card.Title>
                                 </Card.Body>
-                            </Card>
+                            </Link>
+                        </Card>
                         </div>
                         <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
+                        <Card className='box-content-learn'>
+                            <Link to="#" style={{ textDecoration: 'none' }}>    
                                 <Card.Img variant="top" src={dress} className='img-content-learn' />
-                                <Card.Body style={{ fontFamily: 'Genty', color: 'white', textAlign: 'center' }}>
-                                    <Card.Title>Pick the best answer </Card.Title>
+                                <Card.Body>
+                                    <Card.Title className='card-text-title'>Pick the best answer </Card.Title>
                                 </Card.Body>
-                            </Card>
+                            </Link>
+                        </Card>
                         </div>
                         <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
+                        <Card className='box-content-learn'>
+                            <Link to="#" style={{ textDecoration: 'none' }}>
                                 <Card.Img variant="top" src={school} className='img-content-learn' />
-                                <Card.Body style={{ fontFamily: 'Genty', color: 'white', textAlign: 'center' }}>
-                                    <Card.Title>Let’s help Andi find his answer</Card.Title>
+                                <Card.Body>
+                                    <Card.Title className='card-text-title'>Let's help Andi find his answer</Card.Title>
                                 </Card.Body>
-                            </Card>
+                            </Link>
+                        </Card>
                         </div>
                     </Carousel>
                 </Container>
