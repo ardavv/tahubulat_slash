@@ -17,9 +17,10 @@
 }
 
 .task-title {
-    font-size: larger;
+    font-size: 58px;
+    color: #8c52ff00;
     font-family: Genty;
-    color: #8c52ff;
+    text-shadow: 2.5px 2.5px 0 #cdb3ff;
     -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #502b98;
+    -webkit-text-stroke-color: #5814e0;
 }

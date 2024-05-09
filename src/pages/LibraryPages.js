@@ -126,8 +126,8 @@ function Library(props) {
                     </Row>
                 </div>
 
-                <div className='container mt-4 library-title' style={{ textAlign: 'left' }}>
-                    <h1>
+                <div className='container mt-4' style={{ textAlign: 'left' }}>
+                    <h1 className='library-title'>
                         Dance of Discovery
                     </h1>
                 </div>
