@@ -55,7 +55,7 @@ function SignUp() {
 
                         <div className='text-center'>
                             <span>Already have an account? </span>
-                            <Link to="/" style={{ textDecoration: 'none' }}>Sign in</Link>
+                            <Link to="/login" style={{ textDecoration: 'none' }}>Sign in</Link>
                         </div>
 
                     </form>
