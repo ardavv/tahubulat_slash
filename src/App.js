@@ -10,6 +10,7 @@ import Identity from './pages/IdentityPages'
 import Skill from './pages/SkillSelect'
 import Learning from './pages/Learningpage'
 import Playlist from './pages/PlaylistPage'
+import Task from './pages/TaskPages'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/skill' element={<Skill />} />
           <Route path='/learning' element={<Learning />} />
           <Route path='/playlist' element={<Playlist />} />
+          <Route path='/task' element={<Task />} />
         </Routes>
       </Router>
     </>
