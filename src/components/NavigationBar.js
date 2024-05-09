@@ -13,14 +13,14 @@ import ProfilePict from '../assets/img/profile.webp'
 
 const CustNavLink = ({ icon, name, goTo }) => {
     const curPath = useLocation().pathname;
-    const newId = curPath === goTo ? "activeNav" : "";
-    const newClass = curPath === goTo ? "active" : "";
+    const newId = curPath === goTo? "activeNav" : "";
+    const newClass = curPath === goTo? "active" : "";
     return (
         <>
             <Link id={newId} className={newClass + ' nav-icon-link'} to={goTo}>
-                <Image className="nav-icon" src={icon}></Image>
-                <br></br>
-                <span className="nav-cust-span">{name}</span>
+                    <Image className="nav-icon" src={icon}></Image>
+                    <br></br>
+                    <span className="nav-cust-span">{name}</span>
             </Link>
         </>
     )
@@ -43,42 +43,34 @@ const ProfileOutHandler = (e) => {
 
 const NavigationBar = () => {
     const navs = [
-
-        { icon: HomeIcon, name: 'Home', goTo: '/home' },
-        { icon: VideoIcon, name: 'Video', goTo: '/learning' },
-        { icon: TaskIcon, name: 'Task', goTo: '/task' },
-        { icon: LibraryIcon, name: 'Library', goTo: '/library' }
-
+        {icon: HomeIcon, name: 'Home', goTo: '/home'},
+        {icon: VideoIcon, name: 'Video', goTo: '/learning'},
+        {icon: TaskIcon, name: 'Task', goTo: '/task'},
+        {icon: LibraryIcon, name: 'Library', goTo: '/library'}
     ];
 
     return (
         <>
-
             <div id="belowNavbar"></div>
             <Navbar id='mainNavbar' style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
-
                 <Container fluid>
-                    <Navbar.Brand as={Link} to="/home">Playgram</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">PlayGram</Navbar.Brand>
                     <Nav variant="pills">
-                        {navs.map((nav) =>
+                        {navs.map((nav) => 
                             <CustNavLink icon={nav.icon} name={nav.name} goTo={nav.goTo} />
                         )}
-
-                        {/* <Link className="nav-icon-link" style={{display: 'flex'}} onClick={FakeProfileClickHandler}> */}
-                        <div style={{ width: '4px', height: '80px', backgroundColor: 'white', borderRadius: '20px', margin: '0 10px' }}></div>
-
+                        <div style={{width: '4px', height: '80px', backgroundColor: 'white', borderRadius: '20px', margin: '0 10px'}}></div>
                         <div className="d-flex align-items-center justify-content-center nav-icon-link outer-profile" onClick={FakeProfileClickHandler}>
                             <NavDropdown title="Profile" id="profileDropdown" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.1">My Profile</NavDropdown.Item>
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.2">Friends</NavDropdown.Item>
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.3">Mystery Game</NavDropdown.Item>
                                 <NavDropdown.Divider />
-
-                                <Link to='/login'>
-                                    <NavDropdown.Item className="profile-dropdown-item" href="#action/3.4">Log Out</NavDropdown.Item>
-                                </Link>
-
-                                
+                                <NavDropdown.Item className="profile-dropdown-item" href="#action/3.4">
+                                    <Link to='/' style={{ textDecoration: 'none', color: 'black' }}>
+                                        Log Out
+                                    </Link>
+                                    </NavDropdown.Item>
                             </NavDropdown>
                             <Image className='user-prof-pict' src={ProfilePict}></Image>
                             <span className="nav-cust-span">Username</span>

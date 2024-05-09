@@ -1,74 +1,79 @@
 import React from 'react'
 import styles from '../style/homeLogin.css';
-import { Image } from 'react-bootstrap'
+import { Image, Button, Form, FormCheck, FormLabel } from 'react-bootstrap'
 import { Link } from "react-router-dom"
 import Facebook from '../assets/img/facebook.svg'
 import Google from '../assets/img/google.svg'
 import Apple from '../assets/img/apple.svg'
+import FormCheckInput from 'react-bootstrap/esm/FormCheckInput';
+import FormCheckLabel from 'react-bootstrap/esm/FormCheckLabel';
 
 function Login() {
     return (
-      <div className='loginBG'>
+      <>
+        <div className='loginBG'></div>
 
-          <div className={styles.container} style={{ maxWidth: '396px', margin: 'auto' }}>
-          <div className={styles.signIn} style={{ backgroundColor: 'white', borderRadius: '20px', height: '525px' }}>
+        <div className='login-signup-container'>
+          <div className='except-submit-btn'>
 
-          <div className={`${styles.header} text-center mt-4 pt-3`}>
-            <h1 style={{ fontWeight: '1000' }}>Login to</h1>
-            <h1 style={{ fontWeight: '1000' }}>Continue</h1>
-          </div>
+            <h1 className='signup-title'>
+                Login to<br></br>
+                Continue
+            </h1>
 
 
             <form className="m-4">
-              <div className="form-group">
-                <label htmlFor={styles.inputEmail} className={styles.nameForm} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Your Email : </label>
-                <input type="email" className="loginForm form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }} />
+              <div className={styles["form-group"]}>
+                  <label htmlFor="inputEmail" className={styles.nameForm + ' cust-label'} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Your Email : </label>
+                  <input type="email" className={`${styles.registForm} form-control cust-input`} id="inputEmail" aria-describedby="emailHelp" placeholder="Email" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }}/>
               </div>
 
               <br />
 
-              <div className="form-group">
-                <label htmlFor="inputPassword" className={styles.nameForm} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Password :</label>
-                <input type="password" className="loginForm form-control" id="inputPassword" placeholder="Password" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }} />
+              <div className={styles["form-group"]}>
+                  <label htmlFor="inputPassword" className={styles.nameForm + ' cust-label'} style={{ fontSize: '20px', fontWeight: 'bolder' }}>Password :</label>
+                  <input type="password" className={`${styles.registForm} form-control cust-input`} id="inputPassword" placeholder="Password" style={{ width: '100%', backgroundColor: '#E8E8E8', border: '2px solid black' }}/>
               </div>
 
-              <div className={`${styles.submit} mt-4`} style={{ textAlign: 'center', width: '180px', borderRadius: '30px', backgroundColor: '#FFC55A', marginLeft: '88px' }}>
-                  <button type="submit" className="btn" style={{ width: '180px' }}>
-                      <div className="btn-name">
-                          <Link to="/identity" style={{ textDecoration: 'none', color: 'black' }}> 
-                              <h3 style={{ textAlign: 'center', fontWeight: 'bolder' }}>Login</h3>
-                          </Link>
-                      </div>
-                  </button>
+              <br />
+              <FormCheck>
+                <FormCheckInput type='checkbox' style={{height: '20px', width: '20px', border: '2px solid black'}}></FormCheckInput>
+                <FormCheckLabel>Remember me</FormCheckLabel>
+              </FormCheck>
+
+              <div className={styles["form-group"]}>
+                <center>
+                  <Button as={Link} to='/identity' className='login-btn yellow-btn'>Login</Button>
+                </center>
               </div>
 
-              <div className="logo text-center p-2">
+              <div className= "logo text-center mt-3 p-2">
                   <Link to="">
-                      <Image src={Facebook} className={styles.image} style={{ height: '40px', margin: '5px' }}/>
-                  </Link>
-                  
-                  <Link to="">
-                      <Image src={Google} className={styles.image} style={{ height: '40px', margin: '5px' }}/>
+                      <Image src={Facebook} alt="Facebook" className='site-logo' />
                   </Link>
 
                   <Link to="">
-                      <Image src={Apple} className={styles.image} style={{ height: '40px', margin: '5px' }}/>
+                      <Image src={Google} alt="Google" className='site-logo' />
+                  </Link>
+
+                  <Link to="">
+                      <Image src={Apple} alt="Apple" className='site-logo' />
                   </Link>
               </div>
-              
-              <div className={styles["have-account"]}>
-                  <div className="forgot" style={{ fontWeight: 'bold', textAlign: 'center', margin: '5px' }}>
-                      <Link to="" style={{ textDecoration: 'none', color: '#4D7498' }}>Forgot Password?</Link>
-                  </div>
 
-                  <div className="regist mb-3" style={{ fontWeight: 'bold', textAlign: 'center', margin: '5px' }}>
-                      <Link to="/signUp" style={{ textDecoration: 'none', color: '#4D7498' }}>Create an Account!</Link>
-                  </div>
+              <div className='text-center'>
+                  <Link to="/" style={{ textDecoration: 'none' }}>Forgot my password</Link>
               </div>
-            </form>
+
+              <div className='text-center'>
+                  <span>I don't have an account. </span>
+                  <Link to="/signup" style={{ textDecoration: 'none' }}>Sign up</Link>
+              </div>
+
+          </form>
           </div>
         </div>
-      </div>
+      </>
     )
 }
 export default Login
