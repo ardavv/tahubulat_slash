@@ -11,6 +11,7 @@ import Skill from './pages/SkillSelect'
 import Learning from './pages/Learningpage'
 import Playlist from './pages/PlaylistPage'
 import Task from './pages/TaskPages'
+import Library from './pages/LibraryPages'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/learning' element={<Learning />} />
           <Route path='/playlist' element={<Playlist />} />
           <Route path='/task' element={<Task />} />
+          <Route path='/library' element={<Library />} />
         </Routes>
       </Router>
     </>

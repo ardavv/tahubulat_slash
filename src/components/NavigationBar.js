@@ -46,8 +46,8 @@ const NavigationBar = () => {
 
         { icon: HomeIcon, name: 'Home', goTo: '/home' },
         { icon: VideoIcon, name: 'Video', goTo: '/learning' },
-        { icon: TaskIcon, name: 'Task', goTo: '' },
-        { icon: LibraryIcon, name: 'Library', goTo: '' }
+        { icon: TaskIcon, name: 'Task', goTo: '/task' },
+        { icon: LibraryIcon, name: 'Library', goTo: '/library' }
 
     ];
 

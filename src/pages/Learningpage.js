@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import "../style/homeLogin.css";
 import "../style/learningPage.css";
+import "../style/taskPage.css"
 import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image, Badge } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
@@ -202,13 +203,15 @@ function Learning(props) {
                     >
                         {yourDataArray.map((item, index) => (
                             <div key={index} onClick={() => openVideo(item.videoUrl)} style={{ cursor: 'pointer' }}>
-                                <Card>
-                                    <Card.Img variant="top" src={item.imageUrl} />
-                                    <Card.Body>
+                                <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
+                                    <Card.Img variant="top" src={item.imageUrl} className='img-content-learn'/>
+                                    <Card.Body style={{ fontFamily: 'Genty', color: 'white', textAlign: 'center' }}>
                                         <Card.Title>{item.title}</Card.Title>
                                         <Card.Text>{item.description}</Card.Text>
                                     </Card.Body>
                                 </Card>
+
+
                             </div>
                         ))}
                     </Carousel>

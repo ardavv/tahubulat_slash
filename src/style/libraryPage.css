@@ -1,0 +1,12 @@
+.libraryImage {
+    width: 200px;
+    height: auto;
+}
+
+.card-library {
+    padding: 10px !important;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2) !important;
+    border-style: solid !important;
+    border-width: 0.5px !important;
+    border-radius: 10px !important;
+}
