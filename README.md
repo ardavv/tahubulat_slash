@@ -1,72 +1,33 @@
-# Getting Started with Create React App
+# PlayGram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome to PlayGram!
 
-## Available Scripts
+![PlayGram Preview](src\assets\img\readme\IMG-20240509-WA0004.jpg)
 
-In the project directory, you can run:
+Halo semuanya! Perkenalkan kami dari Tim Tahu Bulat mempersembahkan software belajar programming pemula, PlayGram!
 
-### `npm start`
+Software kami ini berupa website yang menyediakan berbagai fitur unik untuk belajar programming dari 0. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Untuk apa website ini kami buat?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Learn Programming from 0!](src\assets\img\readme\IMG-20240509-WA0007.jpg)
 
-### `npm test`
+Latar belakangnya website PlayGram ini dibuat adalah banyaknya orang yang tertarik akan mempelajari programming terkadang masih sulit memahaminya karena kesulitan dari programming yang terkadang memerlukan kecepatan berpikir yang tinggi
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Apa saja sih fitur yang ada di PlayGram?
 
-### `npm run build`
+![Playgram Preview](src\assets\img\readme\IMG-20240509-WA0003.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Fitur-fitur yang membuat kami yakin akan keberhasilannya untuk membantu kalian memahami programming, mulai dari video tentang apa itu programming, beberapa kegiatan asik yang mudah untuk diikuti, hingga artikel singkat jika kalian lebih gemar membaca.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Solusi dari latar belakang, apakah terjamin di website ini?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![What is PlayGram?](src\assets\img\readme\anjay.jpg)
 
-### `npm run eject`
+Ya, kami yakin akan solusi yang kami sediakan dapat menyelesaikan masalah tersebut, solusinya yaitu mempermudah cara pembelajaran menjadi lebih visual dibandingkan teks berlogika.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Kalau gitu tunggu apalagi?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Lets Get Started!](src\assets\img\readme\IMG-20240509-WA0005.jpg)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# hackaton-react
-# hackaton-react
+Yuk teman-teman, kita mulai perjalanan memahami programming kita mulai dari PlayGram!
