@@ -1,7 +1,7 @@
 import React from 'react';
 import "../style/homeLogin.css";
 import "../style/learningPage.css";
-import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
+import { Card, Container, Row, Col, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
@@ -9,9 +9,11 @@ import loops from '../assets/img/loops.jpg';
 import variables from '../assets/img/variables.jpg';
 import ifelse from '../assets/img/ifelse.jpg';
 import Carousel from "react-multi-carousel";
-import buku from '../assets/img/buku.png'
-import task from '../assets/img/task.png'
-import video from '../assets/img/video.png'
+import Games from '../assets/img/Games.png'
+import Puzzles from '../assets/img/Puzzles.png'
+import A_logo from '../assets/img/A logo.png'
+import Music from '../assets/img/Music.png'
+import Chat from '../assets/img/Chat.png'
 import "react-multi-carousel/lib/styles.css";
 
 const responsive = {
@@ -41,18 +43,18 @@ function Learning(props) {
                     <Row >
                         <Col style={{ maxWidth: '300px' }}>
                             <Dropdown data-bs-theme="dark" >
-                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ width: '200px', marginLeft: '30px', marginTop: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9' }}>
+                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle'>
                                     Category
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu style={{ width: '200px', marginTop: '5px' }}>
-                                    <Dropdown.Item href="#/action-1" active style={{ fontWeight: 'bolder' }}>
+                                    <Dropdown.Item href="#/action-1" active style={{ fontFamily: 'Genty' }}>
                                         Beginner
                                     </Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2" style={{ fontWeight: 'bolder' }}>Intermediate</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3" style={{ fontWeight: 'bolder' }}>Expert</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2" style={{ fontFamily: 'Genty' }}>Intermediate</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3" style={{ fontFamily: 'Genty' }}>Expert</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item href="#/action-4" style={{ fontWeight: 'bolder' }}>Change your level</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-4" style={{ fontFamily: 'Genty' }}>Change your level</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
                         </Col>
@@ -66,34 +68,40 @@ function Learning(props) {
                                             placeholder="Search"
                                             className="me-2"
                                             aria-label="Search"
-                                            style={{ border: '3px solid black', borderRadius: '20px', fontWeight: 'bolder', width: '520px' }}
+                                            style={{ border: '2px solid black', borderRadius: '20px', width: '520px', fontFamily: 'Genty' }}
                                         />
-                                        <Button style={{ border: '3px solid black', borderRadius: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9' }}>
+                                        <Button style={{ border: '2px solid black', borderRadius: '20px', backgroundColor: '#864AF9', fontFamily: 'Genty' }}>
                                             Search
                                         </Button>
                                     </Form>
                                 </div>
                                 <div>
-                                    <Link to="/baca">
-                                        <Image src={buku} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Puzzles} rounded className="site-logo m-1" style={{ width: '80px' }}/>
                                     </Link>
-                                    <Link to="/task">
-                                        <Image src={task} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
-
-                                    <Link to="/playlist">
-                                        <Image src={video} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Games} rounded className="site-logo m-1" style={{ width: '80px' }}/>
                                     </Link>
 
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Music} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
+                                    
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={A_logo} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
 
+                                    <Link to="#" style={{ marginLeft: '15px' }}>
+                                        <Image src={Chat} rounded className="site-logo m-1" style={{ width: '80px' }}/>
+                                    </Link>
                                 </div>
                             </Stack>
                         </Col>
                         <Col>
-                            <Card style={{ width: '300px', backgroundColor: '#864AF9', marginLeft: '100px' }}>
+                            <Card style={{ width: '300px', backgroundColor: '#864AF9', marginLeft: '50px' }}>
                                 <Card.Body>
-                                    <Card.Title style={{ color: 'white', fontWeight: 'bolder', fontSize: '30px', textAlign: 'center' }}>Active Task !</Card.Title>
-                                    <Card.Text style={{ color: 'white', marginLeft: '-20px', fontSize: '18px' }}>
+                                    <Card.Title style={{ color: 'white', fontWeight: 'bolder', fontSize: '30px', textAlign: 'center', fontFamily: 'Genty' }}>Active Task !</Card.Title>
+                                    <Card.Text style={{ color: 'white', marginLeft: '-20px', fontSize: '18px', fontFamily: 'Genty' }}>
                                         <ul>
                                             <li>
                                                 Watch Video How to Make Music
@@ -110,7 +118,9 @@ function Learning(props) {
                 </div>
 
                 <div className='title container mt-4' style={{ textAlign: 'left' }}>
-                    Step Into Magical World
+                    <h1 className='task-title'>
+                        Step Into Magical World
+                    </h1>
                 </div>
 
                 <Container className='carousels'>
@@ -135,46 +145,54 @@ function Learning(props) {
                         >
                         <div>
                             <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={variables} className='img-content-learn'/>
-                                <Card.Body >
-                                    <Card.Title>How to Make Music</Card.Title>
-                                    <Card.Text>
-                                        Learn how to make music with Mrs Ella
-                                    </Card.Text>
-                                </Card.Body>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={variables} className='img-content-learn'/>
+                                    <Card.Body >
+                                        <Card.Title className='card-text-title'>How to Make Music</Card.Title>
+                                        <Card.Text className='card-text-desc'>
+                                            Learn how to make music with Mrs Ella
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Link>
                             </Card>
                         </div>
                         <div>
                             <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={ifelse} className='img-content-learn'/>
-                                <Card.Body>
-                                    <Card.Title>Creating your Own World</Card.Title>
-                                    <Card.Text>
-                                        Imagine and creating your own world with Mr Arya
-                                    </Card.Text>
-                                </Card.Body>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={ifelse} className='img-content-learn'/>
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Creating your Own World</Card.Title>
+                                        <Card.Text className='card-text-desc'>
+                                            Imagine and creating your own world with Mr Arya
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Link>
                             </Card>
                         </div>
                         <div>
                             <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={loops} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title>Let's Explore The World</Card.Title>
-                                    <Card.Text>
-                                        Let's go explore the world with programming
-                                    </Card.Text>
-                                </Card.Body>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={loops} className='img-content-learn' />
+                                    <Card.Body>
+                                        <Card.Title className='card-text-title'>Let's Explore The World</Card.Title>
+                                        <Card.Text className='card-text-desc'>
+                                            Let's go explore the world with programming
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Link>
                             </Card>
                         </div>
                         <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={ifelse} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title>Play With Infinite Possibilities</Card.Title>
-                                    <Card.Text>
-                                        Let's play and find infinite possibilities to explore
-                                    </Card.Text>
-                                </Card.Body>
+                            <Card className='box-content-learn'>
+                                <Link to="#" style={{ textDecoration: 'none' }}>
+                                    <Card.Img variant="top" src={ifelse} className='img-content-learn' />
+                                    <Card.Body >
+                                        <Card.Title className='card-text-title'>Play With Infinite Possibilities</Card.Title>
+                                        <Card.Text className='card-text-desc'>
+                                            Let's play and find infinite possibilities to explore
+                                        </Card.Text>
+                                    </Card.Body>
+                                </Link>
                             </Card>
                         </div>
                     </Carousel>

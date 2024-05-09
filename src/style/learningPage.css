@@ -8,7 +8,7 @@
 } */
 
 .dropdown-item:hover {
-    background: #FFD04A !important;
+    background: #9a6bf6 !important;
 }
 
 /* .carousels{
@@ -27,14 +27,18 @@
     font-size: 1.2rem !important; /* Atur ukuran font dropdown */
     padding: 0.5rem 1rem !important;
     width: 200px;;
-    background-color: #AB47BC !important;
     /* background-color: #AB47BC !important; */
 }
+
+.active {
+    background-color: #7048bf !important;
+}
+
 .dropdown-toggle.show {
-    background-color: #9637a7 !important; /* Atur warna background pas abis diklik */
+    background-color: #9a6bf6 !important; /* Atur warna background pas abis diklik */
 }
 .dropdown-toggle:hover {
-    background-color: #9637a7 !important; /* Atur warna background pas hover ke drodpown item */
+    background-color: #7048bf !important; /* Atur warna background pas hover ke drodpown item */
 }
 
 .box-content-learn {
@@ -42,5 +46,35 @@
     border: 1px solid black;
     
     color: white;
-    font-weight: bolder;
+    background-color: #C497F1 !important;
+    border: 2px solid black !important;
+}
+
+.img-content-learn {
+    margin: 10px 10px 5px 10px;
+    border-radius: 35px !important;
+    width: 350px !important;
+    height: 150px !important;
+}
+
+.card-text-title {
+    font-family: Genty !important; 
+    color: white !important;
+    text-align: center !important;
+}
+
+.card-text-desc {
+    font-family: Genty !important; 
+    color: white !important;
+    font-weight: normal !important;
+    text-align: center;
+}
+
+
+.dropdown-toggle {
+    width: 200px !important; 
+    margin-left: 30px !important;
+    margin-top: 20px !important; 
+    background-color: #864AF9 !important;
+    font-family: Genty !important;
 }
