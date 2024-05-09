@@ -1,24 +1,28 @@
 // carouselData.js
 
-import loops from '../assets/img/loops.jpg';
-import variables from '../assets/img/variables.jpg';
-import ifelse from '../assets/img/ifelse.jpg';
+import coding from '../assets/img/beginner/coding.jpg'
+import counting from '../assets/img/beginner/counting.jpg'
+import punctuation from '../assets/img/beginner/punctuation.jpg'
+
 
 const yourDataArray = [
     {
-        imageUrl: loops,
-        title: 'Loops',
-        description: 'This is an image about loops.'
+        imageUrl: coding,
+        title: 'What is Coding?',
+        description: 'This is an image about loops.',
+        videoUrl: 'GvTcpfSnOMQ'
     },
     {
-        imageUrl: variables,
-        title: 'Variables',
-        description: 'This is an image about variables.'
+        imageUrl: counting,
+        title: 'The Counting by Twos Song',
+        description: 'This is an image about variables.',
+        videoUrl:'peyoRSpMNg'
     },
     {
-        imageUrl: ifelse,
-        title: 'If-Else',
-        description: 'This is an image about if-else statements.'
+        imageUrl: punctuation,
+        title: 'Punctuation Explained (by Punctuation!)',
+        description: 'This is an image about if-else statements.',
+        videoUrl: 'LdCOswMeXFQ'
     }
 ];
 

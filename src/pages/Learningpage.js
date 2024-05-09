@@ -1,7 +1,7 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import "../style/homeLogin.css";
 import "../style/learningPage.css";
-import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image } from 'react-bootstrap';
+import { Card, Container, Row, Col, ButtonGroup, Dropdown, Form, Button, Stack, Image, Badge } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import "../App.css";
 import Navbar from '../components/NavigationBar.js';
@@ -13,6 +13,19 @@ import buku from '../assets/img/buku.png'
 import task from '../assets/img/task.png'
 import video from '../assets/img/video.png'
 import "react-multi-carousel/lib/styles.css";
+
+
+// 
+import idea from '../assets/img/icons/learningpage/idea.png'
+import game from '../assets/img/icons/learningpage/game.png'
+import music from '../assets/img/icons/learningpage/music.png'
+import alphabet from '../assets/img/icons/learningpage/alphabet.png'
+import chat from '../assets/img/icons/learningpage/chat.png'
+
+// 
+import beginnerData from '../data/BeginnerData.js'
+import intermediateData from '../data/IntermediateData.js'
+import expertData from '../data/ExpertData.js'
 
 const responsive = {
     desktop: {
@@ -32,31 +45,54 @@ const responsive = {
     }
 };
 
+
+
 function Learning(props) {
+
+    const [selectedLevel, setSelectedLevel] = useState('');
+
+    useEffect(() => {
+        setSelectedLevel('beginner');
+    }, []);
+
+    const handleLevelChange = (event) => {
+        setSelectedLevel(event.target.value);
+    };
+
+    let yourDataArray = [];
+    if (selectedLevel === 'beginner') {
+        yourDataArray = beginnerData;
+
+    } else if (selectedLevel === 'intermediate') {
+        yourDataArray = intermediateData;
+
+    } else if (selectedLevel === 'expert') {
+        yourDataArray = expertData;
+
+    }
+
+    const openVideo = (videoUrl) => {
+        console.log('Opening video with ID:', videoUrl);
+        const youtubeLink = `https://www.youtube.com/watch?v=${videoUrl}`;
+        window.open(youtubeLink, '_blank');
+    };
+
     return (
+
         <>
             <Navbar activeKey='/learning' />
             <div className='homeBG' style={{ backgroundColor: 'white' }}>
                 <div className='container'>
-                    <Row >
-                        <Col style={{ maxWidth: '300px' }}>
-                            <Dropdown data-bs-theme="dark" >
-                                <Dropdown.Toggle variant="secondary" className='dropdown-toggle' style={{ width: '200px', marginLeft: '30px', marginTop: '20px', fontWeight: 'bolder', backgroundColor: '#864AF9' }}>
-                                    Category
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu style={{ width: '200px', marginTop: '5px' }}>
-                                    <Dropdown.Item href="#/action-1" active style={{ fontWeight: 'bolder' }}>
-                                        Beginner
-                                    </Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2" style={{ fontWeight: 'bolder' }}>Intermediate</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3" style={{ fontWeight: 'bolder' }}>Expert</Dropdown.Item>
-                                    <Dropdown.Divider />
-                                    <Dropdown.Item href="#/action-4" style={{ fontWeight: 'bolder' }}>Change your level</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
+                    <Row className='border'>
+                        <Col style={{ maxWidth: '300px' }} className='border'>
+                            <label>Pilih level:</label>
+                            <select value={selectedLevel} onChange={handleLevelChange} className='custom-dropdown' >
+                                <option value="beginner">Pemula</option>
+                                <option value="intermediate">Menengah</option>
+                                <option value="expert">Ahli</option>
+                            </select>
                         </Col>
-                        <Col>
+                        <Col xs='1' md='5' className='border'>
                             <Stack gap={2}>
 
                                 <div>
@@ -74,16 +110,47 @@ function Learning(props) {
                                     </Form>
                                 </div>
                                 <div>
-                                    <Link to="/baca">
-                                        <Image src={buku} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
-                                    <Link to="/task">
-                                        <Image src={task} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
+                                <Container>
+        <Row>
+            <Col className="gx-1">
+                <Link to="/baca">
+                    <Badge bg="danger" className="p-2 rounded-circle">
+                        <Image src={idea} rounded className="site-logo m-1" style={{ width: '40px' }} />
+                    </Badge>
+                </Link>
+            </Col>
+            <Col className="gx-1">
+                <Link to="/task">
+                    <Badge style={{ backgroundColor: '#FFA500' }} className="p-2 rounded-circle">
+                        <Image src={game} rounded className="site-logo m-1" style={{ width: '40px' }} />
+                    </Badge>
+                </Link>
+            </Col>
+            <Col className="gx-1">
+                <Link to="/playlist">
+                    <Badge bg="primary" className="p-2 rounded-circle">
+                        <Image src={music} rounded className="site-logo m-1" style={{ width: '40px' }} />
+                    </Badge>
+                </Link>
+            </Col>
+            <Col className="gx-1">
+                <Link to="/playlist">
+                    <Badge bg="warning" className="p-2 rounded-circle">
+                        <Image src={alphabet} rounded className="site-logo m-1" style={{ width: '40px' }} />
+                    </Badge>
+                </Link>
+            </Col>
+            <Col className="gx-1">
+                <Link to="/playlist">
+                    <Badge bg="warning" className="p-2 rounded-circle">
+                        <Image src={chat} rounded className="site-logo m-1" style={{ width: '40px' }} />
+                    </Badge>
+                </Link>
+            </Col>
+        </Row>
+    </Container>
 
-                                    <Link to="/playlist">
-                                        <Image src={video} rounded className="site-logo m-1" style={{ width: '80px' }}/>
-                                    </Link>
+
 
 
                                 </div>
@@ -115,8 +182,8 @@ function Learning(props) {
 
                 <Container className='carousels'>
                     <Carousel
-                        swipeable={true}
-                        draggable={true}
+                        swipeable={false}
+                        draggable={false}
                         showDots={true}
                         responsive={responsive}
                         ssr={true} // means to render carousel on server-side.
@@ -132,51 +199,18 @@ function Learning(props) {
                         dotListClass="custom-dot-list-style"
                         itemClass="carousel-item-padding-40-px"
                         focusOnSelect={true}
-                        >
-                        <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={variables} className='img-content-learn'/>
-                                <Card.Body >
-                                    <Card.Title>How to Make Music</Card.Title>
-                                    <Card.Text>
-                                        Learn how to make music with Mrs Ella
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={ifelse} className='img-content-learn'/>
-                                <Card.Body>
-                                    <Card.Title>Creating your Own World</Card.Title>
-                                    <Card.Text>
-                                        Imagine and creating your own world with Mr Arya
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={loops} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title>Let's Explore The World</Card.Title>
-                                    <Card.Text>
-                                        Let's go explore the world with programming
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div>
-                            <Card className='box-content-learn' style={{ backgroundColor: '#C497F1' }}>
-                                <Card.Img variant="top" src={ifelse} className='img-content-learn' />
-                                <Card.Body>
-                                    <Card.Title>Play With Infinite Possibilities</Card.Title>
-                                    <Card.Text>
-                                        Let's play and find infinite possibilities to explore
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </div>
+                    >
+                        {yourDataArray.map((item, index) => (
+                            <div key={index} onClick={() => openVideo(item.videoUrl)} style={{ cursor: 'pointer' }}>
+                                <Card>
+                                    <Card.Img variant="top" src={item.imageUrl} />
+                                    <Card.Body>
+                                        <Card.Title>{item.title}</Card.Title>
+                                        <Card.Text>{item.description}</Card.Text>
+                                    </Card.Body>
+                                </Card>
+                            </div>
+                        ))}
                     </Carousel>
                 </Container>
             </div>

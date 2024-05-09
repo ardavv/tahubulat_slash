@@ -1,24 +1,27 @@
 // carouselData.js
 
-import loops from '../assets/img/loops.jpg';
-import variables from '../assets/img/variables.jpg';
-import ifelse from '../assets/img/ifelse.jpg';
+import integers from '../assets/img/expert/integers.jpg';
+import loops from '../assets/img/expert/loops.jpg';
+import functions from '../assets/img/expert/functions.jpg';
 
 const yourDataArray = [
     {
+        imageUrl: integers,
+        title: 'What are Integers? Coding for Kids',
+        description: 'This is an image about loops.',
+        videoUrl: 'emsQNeIe5ew'
+    },
+    {
         imageUrl: loops,
-        title: 'Loops',
-        description: 'This is an image about loops.'
+        title: 'What are Loops? Coding for Kids',
+        description: 'This is an image about variables.',
+        videoUrl: '3JIZ40yuZL0'
     },
     {
-        imageUrl: variables,
-        title: 'Variables',
-        description: 'This is an image about variables.'
-    },
-    {
-        imageUrl: ifelse,
-        title: 'If-Else',
-        description: 'This is an image about if-else statements.'
+        imageUrl: functions,
+        title: 'What are Functions? Coding for Kids',
+        description: 'This is an image about if-else statements.',
+        videoUrl: 'r3Ti5Xp9W8A'
     }
 ];
 
