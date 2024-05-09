@@ -43,23 +43,30 @@ const ProfileOutHandler = (e) => {
 
 const NavigationBar = () => {
     const navs = [
+
         { icon: HomeIcon, name: 'Home', goTo: '/home' },
         { icon: VideoIcon, name: 'Video', goTo: '/learning' },
         { icon: TaskIcon, name: 'Task', goTo: '' },
         { icon: LibraryIcon, name: 'Library', goTo: '' }
+
     ];
 
     return (
         <>
-            <Navbar id='mainNavbar' expand="lg" className="navbar-expand-lg" style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
+
+            <div id="belowNavbar"></div>
+            <Navbar id='mainNavbar' style={{ fontWeight: 'bold', fontSize: 'larger', paddingLeft: '30px' }}>
+
                 <Container fluid>
-                    <Navbar.Brand as={Link} to="/home">TahuBulat</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home">Playgram</Navbar.Brand>
                     <Nav variant="pills">
                         {navs.map((nav) =>
                             <CustNavLink icon={nav.icon} name={nav.name} goTo={nav.goTo} />
                         )}
+
                         {/* <Link className="nav-icon-link" style={{display: 'flex'}} onClick={FakeProfileClickHandler}> */}
                         <div style={{ width: '4px', height: '80px', backgroundColor: 'white', borderRadius: '20px', margin: '0 10px' }}></div>
+
                         <div className="d-flex align-items-center justify-content-center nav-icon-link outer-profile" onClick={FakeProfileClickHandler}>
                             <NavDropdown title="Profile" id="profileDropdown" onFocus={ProfileInHandler} onBlur={ProfileOutHandler}>
                                 <NavDropdown.Item className="profile-dropdown-item" href="#action/3.1">My Profile</NavDropdown.Item>

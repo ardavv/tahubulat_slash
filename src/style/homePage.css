@@ -1,0 +1,108 @@
+/* .homeBG {
+    position: relative;
+    height: 100vh;
+    padding: 20px;
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} */
+.home-wrapper {
+    position: absolute;
+    top: 95px;
+}
+.home-wrapper > * {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.home1 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 960px;
+    background-color: #d8c2ed;
+}
+.home1-title {
+    position: relative;
+    font-size: 66pt;
+    font-family: Genty;
+    margin-top: 170px;
+    padding: 30px;
+    color: #8c52ff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #2b0080;
+    text-shadow: -1.8px -3px 0 #2b0080;
+}
+.home1-image {
+    position: absolute;
+    z-index: -1;
+    /* width: 50%; */
+    top: 30px;
+    right: 0px;
+}
+.home1-caption {
+    padding: 34px;
+    font-family: 'Open Sans';
+    font-size: 22pt;
+    max-width: 50rem;
+}
+.home2 {
+    position: relative;
+    height: 940px;
+    /* height: 70vh; */
+    padding: 50px;
+}
+.home2-title {
+    position: relative;
+    font-size: 43pt;
+    font-family: Genty;
+    margin-top: 30px;
+    padding: 30px;
+    color: #a87dff;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #2b0080;
+}
+.home2-image {
+    width: 550px;
+}
+.home2-caption {
+    font-family: 'Open Sans';
+    font-size: 19pt;
+    color: #7875fd;
+    width: 950px;
+    -webkit-text-stroke: 0.35px #03007f;
+}
+
+.home3 {
+    position: relative;
+    width: 100%;
+    height: 1000px;
+    background-image: url(../assets/img/home3.jpg);
+    background-repeat: no-repeat;
+    /* background-position: center top; */
+}
+.home3-title {
+    margin-top: 370px;
+    font-size: 99.3pt;
+    font-family: 'More Sugar';
+    padding: 50px;
+    color: #00000000;
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: #c497f1;
+    text-shadow: 8px 4px 0 #e1caf8;
+}
+.btn-get-started {
+    font-family: Genty !important;
+    font-size: 50pt !important;
+    background-color: #aba9f8 !important;
+    margin: 0 0 80px 50px;
+    padding: 0 50px !important;
+    border: 5px solid #9b68ff !important;
+    border-radius: 100px !important;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #808080;
+}
+.btn-get-started:hover {
+    background-color: #8f8ce7 !important;
+}
+.btn-get-started:active {
+    background-color: #7774d4 !important;
+}
