@@ -51,7 +51,7 @@ function SignUp() {
                         </div>
 
                         <div className={styles["have-account"]}>
-                            <p style={{ textAlign: 'center' }}>Already have an account? <Link to="/" style={{ textDecoration: 'none' }}>Sign in</Link></p>
+                            <p style={{ textAlign: 'center' }}>Already have an account? <Link to="/login" style={{ textDecoration: 'none' }}>Sign in</Link></p>
                         </div>
 
                         <div className={styles.submit} style={{ width: '396px', borderRadius: '10px', backgroundColor: '#FFC55A', marginLeft: '-24px' }}>
