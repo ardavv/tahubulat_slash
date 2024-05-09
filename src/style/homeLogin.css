@@ -37,7 +37,7 @@
     margin: 0;
     padding: 0;
     z-index: -100;
-    background-image: url(../assets/img/UIUX\ HEKETON.png);
+    background-image: url(../assets/img/homeBG2.jpg);
     background-size: cover;
     /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
 }
@@ -106,7 +106,7 @@
     transition: all 0.1s ease-in-out;
 }
 .skill-card:hover {
-    background-color: #940a0a;
+    background-color: #a678ff;
     color: white;
 }
 
@@ -163,10 +163,13 @@
 }
 
 .site-logo {
-    height: 40px;
+    width: 40px;
     margin: 10px;
     /* padding-top: 10px;
     padding-bottom: 10px; */
+}
+.site-logo:hover {
+    opacity: 0.9;
 }
 
 .title{
