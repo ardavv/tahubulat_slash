@@ -22,3 +22,7 @@
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #378795;
 }
+
+.carousel-pad {
+    padding: 0 10px !important; /* Atur padding antara item */
+}   

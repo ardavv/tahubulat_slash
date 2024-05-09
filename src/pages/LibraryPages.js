@@ -149,26 +149,24 @@ function Library(props) {
                         removeArrowOnDeviceType={["tablet", "mobile"]}
                         deviceType={props.deviceType}
                         dotListClass="custom-dot-list-style"
-                        itemClass="carousel-item-padding-40-px"
+                        itemClass="carousel-pad"
                         focusOnSelect={true}
                     >
 
                         {LibraryData.map((item, index) => (
-                            <div key={index} style={{ cursor: 'pointer', width: '200px', height: 'auto' }} className='border'>
-                                <Stack gap={2} className='border'>
-                                    <div style={{ width: '100%' }}> {/* Atur lebar div agar memenuhi lebar container */}
-                                        <Image src={item.imageUrl} alt="Card image" className='libraryImage' style={{ width: '100%' }} /> {/* Atur lebar gambar menjadi 100% */}
-                                    </div>
-                                    <div style={{ width: '100%' }} > {/* Atur lebar div agar memenuhi lebar container */}
-                                        <Card className=" card-library" style={{ width: '100%' }}> {/* Atur lebar kartu menjadi 100% */}
-                                            <Card.Title style={{ fontSize: '15px' }}>{item.title}</Card.Title>
-                                            <Card.Text>
-                                                {item.description}
-                                            </Card.Text>
-                                            <Card.Text></Card.Text>
-                                        </Card>
-                                    </div>
-                                </Stack>
+                            <div key={index} style={{ cursor: 'pointer'}} >
+                                <div > {/* Atur lebar div agar memenuhi lebar container */}
+                                    <Image src={item.imageUrl} alt="Card image" style={{ width: '50%' }} /> {/* Atur lebar gambar menjadi 100% */}
+                                </div>
+                                <div> {/* Atur lebar div agar memenuhi lebar container */}
+                                    <Card className=" card-library" style={{ width: '50%' }}> {/* Atur lebar kartu menjadi 100% */}
+                                        <Card.Title style={{ fontSize: '15px' }}>{item.title}</Card.Title>
+                                        <Card.Text>
+                                            {item.description}
+                                        </Card.Text>
+                                        <Card.Text></Card.Text>
+                                    </Card>
+                                </div>
                             </div>
                         ))}
 
